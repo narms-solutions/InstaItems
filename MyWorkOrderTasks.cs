@@ -54,6 +54,9 @@ namespace InstaAndHygiene
        [FindsBy(How = How.CssSelector, Using = "#avista-global-container > div > div")]
        public IWebElement OrderListContainer { get; set; }
 
+       [FindsBy(How = How.CssSelector, Using = "#avista-global-container > div > div > div.bottom-panel > div.button-next > span > span")]
+       public IWebElement TEMP { get; set; }
+
       
        //[FindsBy(How = How.CssSelector, Using = "#avista-global-container > div > div > div.order-list-container > div.order-group-list1 > div:nth-child(3) > div.order-text")]
        //public IWebElement ThreeTestRoomOrder { get; set; }

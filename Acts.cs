@@ -110,285 +110,197 @@ namespace InstaAndHygiene
             Console.WriteLine("Done UnpalnnedTasks !");
 
         }
+        public static void FlowThrough(string Time)
+        {
+            MyWorkOrderTasks Tasks = new MyWorkOrderTasks();
+            OrderRoom.Click();
+            Tasks.InstaOrHygiene.Click();
+            IJavaScriptExecutor js = Driver.driver as IJavaScriptExecutor;
+            js.ExecuteScript("window.scrollTo(0, 0);");
+            Tasks.FirstSoftTextBox.Click();
+            Thread.Sleep(1000);
+            Tasks.FirstHardTextBox.Click();
+            Thread.Sleep(1000);
+            Tasks.DirtSecondHardTextBox.Click();
+            Thread.Sleep(1000);
+            Tasks.DustFourthSoftTextBox.Click();
+            Thread.Sleep(1000);
+            js.ExecuteScript("window.scrollBy(0,300);");
+            Tasks.SatinsFirstSoftBox.Click();
+            Thread.Sleep(1000);
+            Tasks.SoilingSoftBox.Click();
+            Thread.Sleep(1000);
+            Tasks.SoilinghardBox.Click();
+            Thread.Sleep(2000);
 
 
-        public static void FirstInspection(string Time)
+            Tasks.EditButton.Click();
+            Thread.Sleep(1000);
+            Tasks.TextArea.SendKeys(Time);
+            Thread.Sleep(1000);
+            Tasks.OkButton.Click();
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+            Console.WriteLine("Done memo text!");
+
+            Tasks.DoneButton.Click();
+            Thread.Sleep(1000);
+            Tasks.YesButton.Click();
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+            Console.WriteLine("Done Room 1!");
+
+
+
+        }
+
+
+        public static void FirstInspection()
         {
             MyWorkOrderTasks order = new MyWorkOrderTasks();
             IJavaScriptExecutor js = Driver.driver as IJavaScriptExecutor;
             Thread.Sleep(1000);
-         
-            
-            
+
+
+
             for (int Delivery = 1; Delivery < 6; Delivery++)
             {
                 js.ExecuteScript("window.scrollBy(0,500);");
                 order.MyWorkOrderTask.Click();
+               // order.TEMP.Click();
                 WorkOrder = Driver.driver.FindElement(By.CssSelector("#avista-global-container > div > div > div.order-list-container > div.order-group-list1 > div:nth-child(" + Delivery + ") > div.order-text"));
                 js.ExecuteScript("window.scrollTo(0, 0);");
-                
-                    WorkOrder.Click();
-                    //order.ContinueTask.Click();
-                    order.SatrtButton.Click();
-                    order.TopAvistaPlace.Click();
-                    IList<IWebElement> subelements = order.OrderListContainer.FindElements(By.ClassName("room-item"));
-                    //int length = subelements.Count;
-                    for (int option = 9; option < subelements.Count+3; option++)
+
+                WorkOrder.Click();
+                // order.TEMP.Click();
+                order.ContinueTask.Click();
+                //order.SatrtButton.Click();
+                order.TopAvistaPlace.Click();
+                IList<IWebElement> subelements = order.OrderListContainer.FindElements(By.ClassName("room-item"));
+                //int length = subelements.Count;
+                for (int option = 8; option < subelements.Count + 3; option++)
+                {
+                    OrderRoom = Driver.driver.FindElement(By.CssSelector("#avista-global-container > div > div > div:nth-child(" + option + ")"));
+
+                    if (option < 8)
                     {
-                        OrderRoom = Driver.driver.FindElement(By.CssSelector("#avista-global-container > div > div > div:nth-child("+ option +")"));
 
-                        if (option<8)
+                        js.ExecuteScript("window.scrollTo(0, 0);");
+                        try
                         {
+                            Acts.FlowThrough(Config.MemoText.Time);
+                            //OrderRoom.Click();
+                            //order.InstaOrHygiene.Click();
 
-                            js.ExecuteScript("window.scrollTo(0, 0);");
-                            try
-                            {
-                                OrderRoom.Click();
-                                order.InstaOrHygiene.Click();
+                            //js.ExecuteScript("window.scrollTo(0, 0);");
+                            //order.FirstSoftTextBox.Click();
+                            //Thread.Sleep(1000);
+                            //order.FirstHardTextBox.Click();
+                            //Thread.Sleep(1000);
+                            //order.DirtSecondHardTextBox.Click();
+                            //Thread.Sleep(1000);
+                            //order.DustFourthSoftTextBox.Click();
+                            //Thread.Sleep(1000);
+                            //js.ExecuteScript("window.scrollBy(0,300);");
+                            //order.SatinsFirstSoftBox.Click();
+                            //Thread.Sleep(1000);
+                            //order.SoilingSoftBox.Click();
+                            //Thread.Sleep(1000);
+                            //order.SoilinghardBox.Click();
+                            //Thread.Sleep(2000);
+                            //Thread.Sleep(2000);
 
-                                js.ExecuteScript("window.scrollTo(0, 0);");
-                                order.FirstSoftTextBox.Click();
-                                Thread.Sleep(1000);
-                                order.FirstHardTextBox.Click();
-                                Thread.Sleep(1000);
-                                order.DirtSecondHardTextBox.Click();
-                                Thread.Sleep(1000);
-                                order.DustFourthSoftTextBox.Click();
-                                Thread.Sleep(1000);
-                                js.ExecuteScript("window.scrollBy(0,300);");
-                                order.SatinsFirstSoftBox.Click();
-                                Thread.Sleep(1000);
-                                order.SoilingSoftBox.Click();
-                                Thread.Sleep(1000);
-                                order.SoilinghardBox.Click();
-                                Thread.Sleep(2000);
-                                Thread.Sleep(2000);
+                            //order.EditButton.Click();
+                            //Thread.Sleep(1000);
+                            //order.TextArea.SendKeys(Time);
+                            //Thread.Sleep(1000);
+                            //order.OkButton.Click();
+                            //Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                            //Console.WriteLine("Done memo text!");
 
-                                order.EditButton.Click();
-                                Thread.Sleep(1000);
-                                order.TextArea.SendKeys(Time);
-                                Thread.Sleep(1000);
-                                order.OkButton.Click();
-                                Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                                Console.WriteLine("Done memo text!");
+                            //order.DoneButton.Click();
+                            //Thread.Sleep(1000);
+                            //order.YesButton.Click();
+                            //Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                            //Console.WriteLine("Done Room 1!");
 
-                                order.DoneButton.Click();
-                                Thread.Sleep(1000);
-                                order.YesButton.Click();
-                                Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                                Console.WriteLine("Done Room 1!");
-
-
-                            }
-                            catch (OpenQA.Selenium.StaleElementReferenceException e)
-                            {
-                                OrderRoom.Click();
-                                order.InstaOrHygiene.Click();
-
-                                js.ExecuteScript("window.scrollTo(0, 0);");
-                                order.FirstSoftTextBox.Click();
-                                Thread.Sleep(1000);
-                                order.FirstHardTextBox.Click();
-                                Thread.Sleep(1000);
-                                order.DirtSecondHardTextBox.Click();
-                                Thread.Sleep(1000);
-                                order.DustFourthSoftTextBox.Click();
-                                Thread.Sleep(1000);
-                                js.ExecuteScript("window.scrollBy(0,300);");
-                                order.SatinsFirstSoftBox.Click();
-                                Thread.Sleep(1000);
-                                order.SoilingSoftBox.Click();
-                                Thread.Sleep(1000);
-                                order.SoilinghardBox.Click();
-                                Thread.Sleep(2000);
-                                Thread.Sleep(2000);
-
-                                order.EditButton.Click();
-                                Thread.Sleep(1000);
-                                order.TextArea.SendKeys(Time);
-                                Thread.Sleep(1000);
-                                order.OkButton.Click();
-                                Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                                Console.WriteLine("Done memo text!");
-
-                                order.DoneButton.Click();
-                                Thread.Sleep(1000);
-                                order.YesButton.Click();
-                                Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                                Console.WriteLine("Done Room 1!");
-
-                                
-                                //throw;
-                            }
-                          
 
                         }
-                        else  if(option<15)
+                        catch (OpenQA.Selenium.StaleElementReferenceException e)
                         {
-                            js.ExecuteScript("window.scrollBy(0,500);");
-                            try
-                            {
-                               
-                                OrderRoom.Click();
-                                order.InstaOrHygiene.Click();
-                                js.ExecuteScript("window.scrollTo(0, 0);");
-                                order.FirstSoftTextBox.Click();
-                                Thread.Sleep(1000);
-                                order.FirstHardTextBox.Click();
-                                Thread.Sleep(1000);
-                                order.DirtSecondHardTextBox.Click();
-                                Thread.Sleep(1000);
-                                order.DustFourthSoftTextBox.Click();
-                                Thread.Sleep(1000);
-                                js.ExecuteScript("window.scrollBy(0,300);");
-                                order.SatinsFirstSoftBox.Click();
-                                Thread.Sleep(1000);
-                                order.SoilingSoftBox.Click();
-                                Thread.Sleep(1000);
-                                order.SoilinghardBox.Click();
-                                Thread.Sleep(2000);
-                                Thread.Sleep(2000);
+                            Acts.FlowThrough(Config.MemoText.Time);
+                            //OrderRoom.Click();
+                            //order.InstaOrHygiene.Click();
 
-                                order.EditButton.Click();
-                                Thread.Sleep(1000);
-                                order.TextArea.SendKeys(Time);
-                                Thread.Sleep(1000);
-                                order.OkButton.Click();
-                                Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                                Console.WriteLine("Done memo text!");
+                            //js.ExecuteScript("window.scrollTo(0, 0);");
+                            //order.FirstSoftTextBox.Click();
+                            //Thread.Sleep(1000);
+                            //order.FirstHardTextBox.Click();
+                            //Thread.Sleep(1000);
+                            //order.DirtSecondHardTextBox.Click();
+                            //Thread.Sleep(1000);
+                            //order.DustFourthSoftTextBox.Click();
+                            //Thread.Sleep(1000);
+                            //js.ExecuteScript("window.scrollBy(0,300);");
+                            //order.SatinsFirstSoftBox.Click();
+                            //Thread.Sleep(1000);
+                            //order.SoilingSoftBox.Click();
+                            //Thread.Sleep(1000);
+                            //order.SoilinghardBox.Click();
+                            //Thread.Sleep(2000);
+                            //Thread.Sleep(2000);
 
-                                order.DoneButton.Click();
-                                Thread.Sleep(1000);
-                                order.YesButton.Click();
-                                Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                                Console.WriteLine("Done Room 1!");
+                            //order.EditButton.Click();
+                            //Thread.Sleep(1000);
+                            //order.TextArea.SendKeys(Time);
+                            //Thread.Sleep(1000);
+                            //order.OkButton.Click();
+                            //Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                            //Console.WriteLine("Done memo text!");
 
-                            }
-                            catch (OpenQA.Selenium.StaleElementReferenceException exe)
-                            {
-                                OrderRoom.Click();
-                                order.InstaOrHygiene.Click();
-                                js.ExecuteScript("window.scrollTo(0, 0);");
-                                order.FirstSoftTextBox.Click();
-                                Thread.Sleep(1000);
-                                order.FirstHardTextBox.Click();
-                                Thread.Sleep(1000);
-                                order.DirtSecondHardTextBox.Click();
-                                Thread.Sleep(1000);
-                                order.DustFourthSoftTextBox.Click();
-                                Thread.Sleep(1000);
-                                js.ExecuteScript("window.scrollBy(0,300);");
-                                order.SatinsFirstSoftBox.Click();
-                                Thread.Sleep(1000);
-                                order.SoilingSoftBox.Click();
-                                Thread.Sleep(1000);
-                                order.SoilinghardBox.Click();
-                                Thread.Sleep(2000);
-                                Thread.Sleep(2000);
+                            //order.DoneButton.Click();
+                            //Thread.Sleep(1000);
+                            //order.YesButton.Click();
+                            //Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                            //Console.WriteLine("Done Room 1!");
 
-                                order.EditButton.Click();
-                                Thread.Sleep(1000);
-                                order.TextArea.SendKeys(Time);
-                                Thread.Sleep(1000);
-                                order.OkButton.Click();
-                                Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                                Console.WriteLine("Done memo text!");
 
-                                order.DoneButton.Click();
-                                Thread.Sleep(1000);
-                                order.YesButton.Click();
-                                Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                                Console.WriteLine("Done Room 1!");
-                                
-                                //throw;
-                            }
-                         
-
-                        }
-                        else
-                        {
-                            js.ExecuteScript("window.scrollBy(0,900);");
-                            try
-                            {
-                                OrderRoom.Click();
-                                order.InstaOrHygiene.Click();
-                                js.ExecuteScript("window.scrollTo(0, 0);");
-                                order.FirstSoftTextBox.Click();
-                                Thread.Sleep(1000);
-                                order.FirstHardTextBox.Click();
-                                Thread.Sleep(1000);
-                                order.DirtSecondHardTextBox.Click();
-                                Thread.Sleep(1000);
-                                order.DustFourthSoftTextBox.Click();
-                                Thread.Sleep(1000);
-                                js.ExecuteScript("window.scrollBy(0,300);");
-                                order.SatinsFirstSoftBox.Click();
-                                Thread.Sleep(1000);
-                                order.SoilingSoftBox.Click();
-                                Thread.Sleep(1000);
-                                order.SoilinghardBox.Click();
-                                Thread.Sleep(2000);
-                                Thread.Sleep(2000);
-
-                                order.EditButton.Click();
-                                Thread.Sleep(1000);
-                                order.TextArea.SendKeys(Time);
-                                Thread.Sleep(1000);
-                                order.OkButton.Click();
-                                Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                                Console.WriteLine("Done memo text!");
-
-                                order.DoneButton.Click();
-                                Thread.Sleep(1000);
-                                order.YesButton.Click();
-                                Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                                Console.WriteLine("Done Room 1!");
-
-                            }
-                            catch (OpenQA.Selenium.StaleElementReferenceException ex)
-                            {
-
-                                OrderRoom.Click();
-                                order.InstaOrHygiene.Click();
-                                js.ExecuteScript("window.scrollTo(0, 0);");
-                                order.FirstSoftTextBox.Click();
-                                Thread.Sleep(1000);
-                                order.FirstHardTextBox.Click();
-                                Thread.Sleep(1000);
-                                order.DirtSecondHardTextBox.Click();
-                                Thread.Sleep(1000);
-                                order.DustFourthSoftTextBox.Click();
-                                Thread.Sleep(1000);
-                                js.ExecuteScript("window.scrollBy(0,300);");
-                                order.SatinsFirstSoftBox.Click();
-                                Thread.Sleep(1000);
-                                order.SoilingSoftBox.Click();
-                                Thread.Sleep(1000);
-                                order.SoilinghardBox.Click();
-                                Thread.Sleep(2000);
-                                Thread.Sleep(2000);
-
-                                order.EditButton.Click();
-                                Thread.Sleep(1000);
-                                order.TextArea.SendKeys(Time);
-                                Thread.Sleep(1000);
-                                order.OkButton.Click();
-                                Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                                Console.WriteLine("Done memo text!");
-
-                                order.DoneButton.Click();
-                                Thread.Sleep(1000);
-                                order.YesButton.Click();
-                                Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                                Console.WriteLine("Done Room 1!");
-
-                                //throw;
-                            }
-                            
+                            //throw;
                         }
 
 
-                
+                    }
+                    else if (option <  15)
+                    {
+                        js.ExecuteScript("window.scrollBy(0,500);");
+                        try
+                        {
+                            Acts.FlowThrough(Config.MemoText.Time);
+
+                        }
+                        catch (OpenQA.Selenium.StaleElementReferenceException exe)
+                        {
+                            Acts.FlowThrough(Config.MemoText.Time);
+                            //throw;
+                        }
+
+
+                    }
+                    else
+                    {
+                        js.ExecuteScript("window.scrollBy(0,900);");
+                        try
+                        {
+                            Acts.FlowThrough(Config.MemoText.Time);
+                        }
+                        catch (OpenQA.Selenium.StaleElementReferenceException ex)
+                        {
+
+                            Acts.FlowThrough(Config.MemoText.Time);
+                        }
+
+                    }
+
+
+
                 }
 
             }
