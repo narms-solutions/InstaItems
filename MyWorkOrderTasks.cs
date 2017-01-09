@@ -57,6 +57,9 @@ namespace InstaAndHygiene
        [FindsBy(How = How.CssSelector, Using = "#avista-global-container > div > div > div.bottom-panel > div.button-next > span > span")]
        public IWebElement TEMP { get; set; }
 
+       [FindsBy(How = How.CssSelector, Using = "#avista-global-container > div.avista-view-message > div > div.button-container > div.button.yes")]
+       public IWebElement TempYes { get; set; }
+
       
        //[FindsBy(How = How.CssSelector, Using = "#avista-global-container > div > div > div.order-list-container > div.order-group-list1 > div:nth-child(3) > div.order-text")]
        //public IWebElement ThreeTestRoomOrder { get; set; }
@@ -162,6 +165,42 @@ namespace InstaAndHygiene
 
        //[FindsBy(How = How.CssSelector, Using = "#avista-global-container > div > div > div:nth-child(3)")]
        //public IWebElement Room1 { get; set; }
+
+
+       /////////////////////////////////////////HygieneWorkOrder//////////////////////////////////////////////
+
+       [FindsBy(How = How.CssSelector, Using = "#avista-global-container > div > div > div.order-list-container > div.order-group-list1 > div:nth-child(1)")]
+       public IWebElement HygieneWorkOrder { get; set; }
+
+       [FindsBy(How=How.CssSelector,Using="#avista-global-container > div > div > div.inspection-container > div > div:nth-child(2) > div:nth-child(3) > div > div:nth-child(10) > div.val.type-a > span")]
+       public IWebElement otherTechnicalInst { get; set; }
+
+       [FindsBy(How = How.CssSelector, Using = "#avista-global-container > div > div > div.inspection-container > div > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(6) > div.val.type-na > span")]
+       public IWebElement HBM { get; set; }
+
+       [FindsBy(How = How.CssSelector, Using = "#avista-global-container > div > div > div.inspection-container > div > div:nth-child(2) > div:nth-child(3) > div > div:nth-child(6) > div.val.type-a > span")]
+       public IWebElement WasteSoftAccesss { get; set; }
+
+       [FindsBy(How = How.CssSelector, Using = "#avista-global-container > div > div > div.inspection-container > div > div:nth-child(2) > div:nth-child(4) > div > div:nth-child(6) > div.val.type-na > span")]
+       public IWebElement DustHardAccess { get; set; }
+
+       [FindsBy(How = How.CssSelector, Using = "#avista-global-container > div > div > div.inspection-container > div > div:nth-child(2) > div:nth-child(3) > div > div:nth-child(7) > div.val.type-a")]
+       public IWebElement TableSoftAccess { get; set; }
+
+       [FindsBy(How = How.CssSelector, Using = "#avista-global-container > div > div > div.inspection-container > div > div:nth-child(2) > div:nth-child(4) > div > div:nth-child(7) > div.val.type-na > span")]
+       public IWebElement TableDustHard { get; set; }
+
+       [FindsBy(How=How.CssSelector,Using="#avista-global-container > div.bottom-panel.type-common > div.button.menu > span")]
+       public IWebElement LogOutButton { get; set; }
+
+       [FindsBy(How=How.CssSelector,Using="div > div > span.text")]
+       public IWebElement LogOut { get; set; }
+
+       [FindsBy(How = How.CssSelector, Using = "#avista-global-container > div > div > div.order-list-container > div.order-group-list1 > div:nth-child(1)")]
+       public IWebElement InstaWorkOrder { get; set; }
+
+       [FindsBy(How=How.CssSelector,Using="#avista-global-container > div > div > div.locale-tree-item.empty")]
+       public IWebElement InstaTopavistaPlace { get; set; }
 
 
 

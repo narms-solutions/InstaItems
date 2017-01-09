@@ -6,11 +6,24 @@ namespace InstaAndHygiene
     {
        public static string BaseURL = "https://a5.avistatime.com/mobile/";
        public static string WebURL = "https://a5.avistatime.com/login.php";
+       public static string SubscriberURL = "https://a5.avistatime.com/index.php#reports_insta_hygiene";
 
        public static class HospitalCredentials
        {
            public static string MobileNumber = "0705587800";
            public static string UserCare = "casea@h.se";
+           public static string PassWord = "12340";
+       }
+       public static class HygieneCredentials
+       {
+           public static string MobileNumber = "0705587800";
+           public static string UserCare = "casea1@h.se";
+           public static string PassWord = "12340";
+       }
+       public static class MuicipalityCredentials
+       {
+           public static string MobileNumber = "0705587800";
+           public static string UserCare = "municipality@a.se";
            public static string PassWord = "12340";
        }
        public static class MemoText
