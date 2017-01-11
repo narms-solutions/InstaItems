@@ -39,8 +39,24 @@ namespace InstaAndHygiene
             //Acts.LoginCredentials(Config.MuicipalityCredentials.MobileNumber, Config.MuicipalityCredentials.UserCare, Config.MuicipalityCredentials.PassWord);
             //Acts.MunicipalityInsta();
 
+            //Acts.LoginCredentials(Config.FourSingleSampCredentials.MobileNumber, Config.FourSingleSampCredentials.UserCare, Config.FourSingleSampCredentials.PassWord);
+            //Acts.BothAppTestCase();
+
+            ////Acts.InitializeDriver();
+            //Acts.LoginCredentials(Config.FourSingleSampCredentials.MobileNumber, Config.FourSingleSampCredentials.UserCare, Config.FourSingleSampCredentials.PassWord);
+            //Acts.InstaAppHygieneRejTestCase();
+
+            //Acts.InitializeDriver();
+            //Acts.LoginCredentials(Config.FourSingleSampCredentials.MobileNumber, Config.FourSingleSampCredentials.UserCare, Config.FourSingleSampCredentials.PassWord);
+            //Acts.InstarejHygieneAppTestCase();
+
+            Acts.InitializeDriver();
             Acts.LoginCredentials(Config.FourSingleSampCredentials.MobileNumber, Config.FourSingleSampCredentials.UserCare, Config.FourSingleSampCredentials.PassWord);
-            Acts.FourDiffTestCase();
+            Acts.BothRejTestCase();
+
+
+
+
         }
     }
 }

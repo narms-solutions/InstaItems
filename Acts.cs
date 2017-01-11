@@ -365,6 +365,10 @@ namespace InstaAndHygiene
 
             flow.SatinsFirstSoftBox.Click();
             Thread.Sleep(1000);
+            flow.SatinsFirstSoftBox.Click();
+            Thread.Sleep(1000);
+            flow.SatinsFirstSoftBox.Click();
+            Thread.Sleep(1000);
 
             flow.SoilingSoftBox.Click();
             Thread.Sleep(1000);
@@ -476,15 +480,13 @@ namespace InstaAndHygiene
             common.TextArea.SendKeys(Time);
             Thread.Sleep(1000);
             common.OkButton.Click();
-            Console.ForegroundColor = ConsoleColor.DarkMagenta;
-            Console.WriteLine("Done memo text for room " + option + "!");
-
+            
             common.DoneButton.Click();
             Thread.Sleep(1000);
             common.YesButton.Click();
            
         }
-        public static void  FourDiffTestCase()
+        public static void  BothAppTestCase()
         {
             MyWorkOrderTasks Diff = new MyWorkOrderTasks();
             Thread.Sleep(1000);
@@ -493,33 +495,97 @@ namespace InstaAndHygiene
             js.ExecuteScript("window.scrollBy(0,600);");
             Diff.MyWorkOrderTask.Click();
             Diff.InstaWorkOrder.Click();
-            Diff.ContinueTask.Click();
-            //Diff.SatrtButton.Click();
+            //Diff.BothRej.Click();
+            //Diff.ContinueTask.Click();
+            Diff.SatrtButton.Click();
             Diff.TopAvistaPlace.Click();
+           
+                IList<IWebElement> subelements = Diff.OrderListContainer.FindElements(By.ClassName("room-item"));
+            for (int option = 3; option < subelements.Count + 3; option++)
+            {
+                OrderRoom = Driver.driver.FindElement(By.CssSelector("#avista-global-container > div > div > div:nth-child(" + option + ")"));
+               /////////////////Both approved//////////////////
+                OrderRoom.Click();
+                Acts.FlowThrough(Config.MemoText.Time);
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
+                Console.WriteLine("Done memo text for room " + option + "!");
+                Console.WriteLine("Done Room " + option + "!");
+                
+
+            }
+            Diff.LogOutButton.Click();
+            Diff.LogOut.Click();
+        }
+
+
+        public static void  InstaAppHygieneRejTestCase()
+        {
+            MyWorkOrderTasks Diff = new MyWorkOrderTasks();
+            Thread.Sleep(1000);
+            IJavaScriptExecutor js = Driver.driver as IJavaScriptExecutor;
+            Thread.Sleep(1000);
+            js.ExecuteScript("window.scrollBy(0,600);");
+            Diff.MyWorkOrderTask.Click();
+            Diff.InstaWorkOrder.Click();
+            //Diff.BothRej.Click();
+            //Diff.ContinueTask.Click();
+            Diff.SatrtButton.Click();
+            Diff.TopAvistaPlace.Click();
+           
             IList<IWebElement> subelements = Diff.OrderListContainer.FindElements(By.ClassName("room-item"));
             for (int option = 3; option < subelements.Count + 3; option++)
             {
                 OrderRoom = Driver.driver.FindElement(By.CssSelector("#avista-global-container > div > div > div:nth-child(" + option + ")"));
-               ///////////////////Both approved//////////////////
-                //OrderRoom.Click();
-                //Acts.FlowThrough(Config.MemoText.Time);
-
+              
                 /////////////////////InstaAppHygieneRej//////////////
-                //if(option<5)
-                //{
-                //    OrderRoom.Click();
-                //    Thread.Sleep(1000);
-                //    Diff.SinkSoftFourDiff.Click();
-                //    Acts.CommonUseCase(Config.MemoText.Time);
-                //}
-                //else
-                //{
-                //    OrderRoom.Click();
-                //    Acts.FlowThrough(Config.MemoText.Time);
-                //}
+                if(option<5)
+                {
+                    OrderRoom.Click();
+                    Thread.Sleep(1000);
+                    Diff.SinkSoftFourDiff.Click();
+                    Acts.CommonUseCase(Config.MemoText.Time);
+                    Console.ForegroundColor = ConsoleColor.DarkCyan;
+                    Console.WriteLine("Done memo text for room " + option + "!");
+                    Console.WriteLine("Done Room " + option + "!");
+                  
+                }
+                else
+                {
+                    OrderRoom.Click();
+                    Acts.FlowThrough(Config.MemoText.Time);
+                    Console.ForegroundColor = ConsoleColor.DarkCyan;
+                    Console.WriteLine("Done memo text for room " + option + "!");
+                    Console.WriteLine("Done Room " + option + "!");
+                }
+                
+            }
+            Diff.LogOutButton.Click();
+            Diff.LogOut.Click();
+        }
 
-                ///////////////////////////InstaRejHygieneApp/////////////////
-              if(option <9)
+           public static void  InstarejHygieneAppTestCase()
+         {
+            MyWorkOrderTasks Diff = new MyWorkOrderTasks();
+            Thread.Sleep(1000);
+            IJavaScriptExecutor js = Driver.driver as IJavaScriptExecutor;
+            Thread.Sleep(1000);
+            js.ExecuteScript("window.scrollBy(0,600);");
+            Diff.MyWorkOrderTask.Click();
+            Diff.InstaWorkOrder.Click();
+            //Diff.BothRej.Click();
+            //Diff.ContinueTask.Click();
+            Diff.SatrtButton.Click();
+            Diff.TopAvistaPlace.Click();
+           
+            IList<IWebElement> subelements = Diff.OrderListContainer.FindElements(By.ClassName("room-item"));
+            for (int option = 3; option < subelements.Count + 3; option++)
+            {
+                OrderRoom = Driver.driver.FindElement(By.CssSelector("#avista-global-container > div > div > div:nth-child(" + option + ")"));
+              
+                
+            
+               ///////////////////////////InstaRejHygieneApp/////////////////
+                if(option <9)
               {
                   js.ExecuteScript("window.scrollTo(0, 0);");
                   OrderRoom.Click();
@@ -535,7 +601,8 @@ namespace InstaAndHygiene
                   Thread.Sleep(1000);
                   Acts.InstaFlowThrough(Config.MemoText.Time);
                   Acts.CommonUseCase(Config.MemoText.Time);
-                  Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                  Console.ForegroundColor = ConsoleColor.DarkCyan;
+                  Console.WriteLine("Done memo text for room " + option + "!");
                   Console.WriteLine("Done Room " + option + "!");
                 
               }
@@ -555,8 +622,9 @@ namespace InstaAndHygiene
                   Thread.Sleep(1000);
                   Acts.InstaFlowThrough(Config.MemoText.Time);
                   Acts.CommonUseCase(Config.MemoText.Time);
-                  Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                  Console.WriteLine("Done Room " + option + "!");
+                  Console.ForegroundColor = ConsoleColor.DarkCyan;
+                  Console.WriteLine("Done memo text for room " + option + "!");
+                 Console.WriteLine("Done Room " + option + "!");
 
               }
               else
@@ -575,12 +643,76 @@ namespace InstaAndHygiene
                   Thread.Sleep(1000);
                   Acts.InstaFlowThrough(Config.MemoText.Time);
                   Acts.CommonUseCase(Config.MemoText.Time);
-                  Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                  Console.WriteLine("Done Room " + option + "!");
+                       Console.ForegroundColor = ConsoleColor.DarkCyan;
+                       Console.WriteLine("Done memo text for room " + option + "!");
+                       Console.WriteLine("Done Room " + option + "!");
               }
                
+           }
+            Diff.LogOutButton.Click();
+            Thread.Sleep(1000);
+            Diff.LogOut.Click();
+                
+        }
 
+                 
+             
+                //////////////////////////////////BothRejected//////////////////////////
+              
+       public static void  BothRejTestCase()
+        {
+            MyWorkOrderTasks Diff = new MyWorkOrderTasks();
+            Thread.Sleep(1000);
+            IJavaScriptExecutor js = Driver.driver as IJavaScriptExecutor;
+            Thread.Sleep(1000);
+            js.ExecuteScript("window.scrollBy(0,600);");
+            Diff.MyWorkOrderTask.Click();
+            Diff.InstaWorkOrder.Click();
+            //Diff.BothRej.Click();
+            Diff.ContinueTask.Click();
+            //Diff.SatrtButton.Click();
+            Diff.TopAvistaPlace.Click();
+           
+                IList<IWebElement> subelements = Diff.OrderListContainer.FindElements(By.ClassName("room-item"));
+            for (int option = 5; option < subelements.Count + 3; option++)
+            {
+                OrderRoom = Driver.driver.FindElement(By.CssSelector("#avista-global-container > div > div > div:nth-child(" + option + ")"));
+               /////////////////Both approved//////////////////
+                OrderRoom.Click();
+                Acts.FlowThrough(Config.MemoText.Time);
+                   
+                 if(option<5)
+                {
+                    OrderRoom.Click();
+                    Thread.Sleep(1000);
+                    Diff.SinkSoftFourDiff.Click();
+                    Thread.Sleep(1000);
+                    Diff.InstaOrHygiene.Click();
+                    Thread.Sleep(1000);
+                    Acts.InstaFlowThrough(Config.MemoText.Time);
+                    Acts.CommonUseCase(Config.MemoText.Time);
+                    Console.ForegroundColor = ConsoleColor.DarkCyan;
+                    Console.WriteLine("Done memo text for room " + option + "!");
+                    Console.WriteLine("Done Room " + option + "!");
+
+                }
+                else
+                {
+                    OrderRoom.Click();
+                    Thread.Sleep(1000);
+                    Diff.InstaOrHygiene.Click();
+                    Thread.Sleep(1000);
+                    Acts.InstaFlowThrough(Config.MemoText.Time);
+                    Acts.CommonUseCase(Config.MemoText.Time);
+                    Console.ForegroundColor = ConsoleColor.DarkCyan;
+                    Console.WriteLine("Done memo text for room " + option + "!");
+                    Console.WriteLine("Done Room " + option + "!");
+                    
+                }
             }
+            Diff.LogOutButton.Click();
+            Thread.Sleep(1000);
+            Diff.LogOut.Click();
         }
          
 

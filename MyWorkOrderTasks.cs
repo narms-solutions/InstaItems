@@ -223,6 +223,9 @@ namespace InstaAndHygiene
        [FindsBy(How=How.CssSelector,Using="#avista-global-container > div > div > div.inspection-container > div > div:nth-child(2) > div:nth-child(3) > div > div:nth-child(3) > div.val.type-a > span")]
        public IWebElement SinkSoftFourDiff { get; set; }
 
+       [FindsBy(How=How.CssSelector,Using="#avista-global-container > div > div > div.order-list-container > div.order-group-list1 > div:nth-child(4) > div.order-text")]
+       public IWebElement BothRej { get; set; }
+
 
 
     }
