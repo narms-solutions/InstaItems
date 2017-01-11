@@ -79,6 +79,11 @@ namespace InstaAndHygiene
        [FindsBy(How=How.CssSelector,Using="#avista-global-container > div > div > div.bottom-panel > div.button-switch.box > span")]
        public IWebElement InstaOrHygiene { get; set; }
 
+       [FindsBy(How = How.CssSelector, Using = "#avista-global-container > div > div > div.inspection-container > div > div:nth-child(2) > div:nth-child(3) > div > div:nth-child(7) > div.val.type-a > span")]
+       public IWebElement TableSoft { get; set; }
+
+             
+
        [FindsBy(How = How.CssSelector, Using = "#avista-global-container > div > div > div.inspection-container > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(2) > div.val.type-a > span")]
        public IWebElement FirstSoftTextBox { get; set; }
 
@@ -203,8 +208,20 @@ namespace InstaAndHygiene
        public IWebElement InstaTopavistaPlace { get; set; }
 
 
+       [FindsBy(How=How.CssSelector,Using="#avista-global-container > div > div > div.inspection-container > div > div:nth-child(2) > div:nth-child(3) > div > div:nth-child(10) > div.val.type-a > span")]
+       public IWebElement KoridorTechSoft { get; set; }
 
+       [FindsBy(How=How.CssSelector,Using="#avista-global-container > div > div > div.inspection-container > div > div:nth-child(2) > div:nth-child(3) > div > div:nth-child(3) > div.val.type-na > span")]
+       public IWebElement OmKladerSinkHardWaste { get; set; }
 
+       [FindsBy(How=How.CssSelector,Using="#avista-global-container > div > div > div.inspection-container > div > div:nth-child(2) > div:nth-child(3) > div > div:nth-child(10) > div.val.type-a > span")]
+       public IWebElement OmKladerTechHard { get; set; }
+
+       [FindsBy(How=How.CssSelector,Using="#avista-global-container > div > div > div.inspection-container > div > div:nth-child(2) > div:nth-child(4) > div > div:nth-child(1) > div.val.type-na > span")]
+       public IWebElement OmKladerDustHard { get; set; }
+
+       [FindsBy(How=How.CssSelector,Using="#avista-global-container > div > div > div.inspection-container > div > div:nth-child(2) > div:nth-child(3) > div > div:nth-child(3) > div.val.type-a > span")]
+       public IWebElement SinkSoftFourDiff { get; set; }
 
 
 
