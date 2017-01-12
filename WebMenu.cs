@@ -67,5 +67,32 @@ namespace InstaAndHygiene
 
         [FindsBy(How=How.CssSelector,Using="body > div:nth-child(32) > div > div.webix_win_head > div > div > div.webix_view.webix_control.webix_el_icon > button")]
        public IWebElement CloseChart { get; set; }
+
+
+       [FindsBy(How = How.ClassName, Using = "webix_ss_body")]
+        public IWebElement Temp { get; set; }
+       [FindsBy(How = How.ClassName, Using = "webix_ss_center_scroll")]
+       public IWebElement Temp1 { get; set; }
+
+       [FindsBy(How=How.ClassName,Using="webix_ss_header")]
+       public IWebElement TempHeader { get; set; }
+
+       [FindsBy(How = How.ClassName, Using = "webix_hs_center")]
+       public IWebElement TempHeaderContainer { get; set; }
+
+       [FindsBy(How = How.ClassName, Using = "webix_first")]
+       public IWebElement Table { get; set; }
+
+       [FindsBy(How = How.CssSelector, Using = "webix_column.s1484226787595.webix_last")]
+       public IWebElement Table1 { get; set; }
+
+       [FindsBy(How=How.ClassName,Using="webix_c_scroll_y")]
+       public IWebElement footerscroollBar { get; set; }
+
+       [FindsBy(How = How.CssSelector, Using = "body > div.webix_view.webix_layout_line > div.webix_view.dashboard.webix_layout_space > div.webix_view.webix_layout_space > div.webix_view.webix_dataview.dashboard_report > div > div:nth-child(1) > div > div")]
+       public IWebElement BigN { get; set; }
+
+       [FindsBy(How = How.XPath, Using = "//*[@id=\"datatable_a1484209190619\"]/div[2]/div[2]/div/div[9]")]
+       public IWebElement Column { get; set; }
     }
 }
