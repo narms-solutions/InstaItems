@@ -89,8 +89,11 @@ namespace InstaAndHygiene
        [FindsBy(How=How.ClassName,Using="webix_c_scroll_y")]
        public IWebElement footerscroollBar { get; set; }
 
-       [FindsBy(How = How.CssSelector, Using = "body > div.webix_view.webix_layout_line > div.webix_view.dashboard.webix_layout_space > div.webix_view.webix_layout_space > div.webix_view.webix_dataview.dashboard_report > div > div:nth-child(1) > div:nth-child(3) > div")]
-       public IWebElement BigN { get; set; }
+       [FindsBy(How = How.CssSelector, Using = "body > div.webix_view.webix_layout_line > div.webix_view.dashboard.webix_layout_space > div.webix_view.webix_layout_space > div.webix_view.webix_dataview.dashboard_report > div > div:nth-child(1) > div:nth-child(4)")]
+       public IWebElement TestFolder { get; set; }
+
+       [FindsBy(How = How.CssSelector, Using = "body > div.webix_view.webix_layout_line > div.webix_view.dashboard.webix_layout_space > div.webix_view.webix_layout_space > div.webix_view.webix_dataview.dashboard_report > div > div:nth-child(1) > div:nth-child(2) > div")]
+       public IWebElement NewResult { get; set; }
 
        [FindsBy(How = How.XPath, Using = "//*[@id=\"datatable_a1484209190619\"]/div[2]/div[2]/div/div[9]")]
        public IWebElement Column { get; set; }
@@ -101,10 +104,10 @@ namespace InstaAndHygiene
        [FindsBy(How=How.CssSelector,Using="body > div:nth-child(5) > div > div.webix_win_body > div > div.webix_view.webix_layout_line > div:nth-child(3) > div > button")]
        public IWebElement NoneButton { get; set; }
 
-       [FindsBy(How=How.CssSelector,Using="#datatable1484561756483 > div.webix_ss_body > div.webix_ss_center > div > div.webix_column.s1484561756493.webix_first > div:nth-child(11) > input")]
+       [FindsBy(How = How.ClassName, Using = "webix_column")]
        public IWebElement CapitalN { get; set; }
 
-       [FindsBy(How=How.CssSelector,Using="#datatable1484561756483 > div.webix_ss_body > div.webix_ss_center > div > div.webix_column.s1484561756493.webix_first > div:nth-child(12) > input")]
+       [FindsBy(How = How.CssSelector, Using = "#datatable1484562384714 > div.webix_ss_body > div.webix_ss_center > div > div.webix_column.s1484562384724.webix_first > div:nth-child(21)")]
        public IWebElement SmallN { get; set; }
     }
 }
