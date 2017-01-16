@@ -94,5 +94,17 @@ namespace InstaAndHygiene
 
        [FindsBy(How = How.XPath, Using = "//*[@id=\"datatable_a1484209190619\"]/div[2]/div[2]/div/div[9]")]
        public IWebElement Column { get; set; }
+
+       [FindsBy(How=How.CssSelector,Using="body > div.webix_view.webix_layout_line > div.webix_view.my_layout_cell.bottom_layout.webix_layout_line > div:nth-child(1) > div > button")]
+       public IWebElement BottomSelection { get; set; }
+
+       [FindsBy(How=How.CssSelector,Using="body > div:nth-child(5) > div > div.webix_win_body > div > div.webix_view.webix_layout_line > div:nth-child(3) > div > button")]
+       public IWebElement NoneButton { get; set; }
+
+       [FindsBy(How=How.CssSelector,Using="#datatable1484561756483 > div.webix_ss_body > div.webix_ss_center > div > div.webix_column.s1484561756493.webix_first > div:nth-child(11) > input")]
+       public IWebElement CapitalN { get; set; }
+
+       [FindsBy(How=How.CssSelector,Using="#datatable1484561756483 > div.webix_ss_body > div.webix_ss_center > div > div.webix_column.s1484561756493.webix_first > div:nth-child(12) > input")]
+       public IWebElement SmallN { get; set; }
     }
 }

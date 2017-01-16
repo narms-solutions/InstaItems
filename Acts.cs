@@ -38,6 +38,18 @@ namespace InstaAndHygiene
             Console.WriteLine("Succesfully Login !");
 
         }
+        public static void LoginCredentialsWithOutMobileNumber( string UserName, string password)
+        {
+            LoginPage login1 = new LoginPage();
+            login1.UserName.Clear();
+            login1.UserName.SendKeys(UserName);
+            login1.Password.Clear();
+            login1.Password.SendKeys(password);
+            login1.LoginButton.Click();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Succesfully Login !");
+
+        }
         public static void Attendance()
         {
             Attendance attend = new Attendance();
@@ -149,6 +161,7 @@ namespace InstaAndHygiene
             for (int Delivery = 1; Delivery < 6; Delivery++)
             {
                 js.ExecuteScript("window.scrollBy(0,500);");
+                Thread.Sleep(1000);
                 order.MyWorkOrderTask.Click();
 
                 WorkOrder = Driver.driver.FindElement(By.CssSelector("#avista-global-container > div > div > div.order-list-container > div.order-group-list1 > div:nth-child(" + Delivery + ") > div.order-text"));
@@ -156,7 +169,7 @@ namespace InstaAndHygiene
                 Thread.Sleep(1000);
                 WorkOrder.Click();
                 Thread.Sleep(1000);
-              //order.ContinueTask.Click();
+               //order.ContinueTask.Click();
                order.SatrtButton.Click();
                Thread.Sleep(1000);
                 order.TopAvistaPlace.Click();
@@ -325,7 +338,7 @@ namespace InstaAndHygiene
             Thread.Sleep(1000);
             App.HygieneWorkOrder.Click();
             App.SatrtButton.Click();
-
+            Thread.Sleep(1000);
             App.TopAvistaPlace.Click();
             IList<IWebElement> subelements = App.OrderListContainer.FindElements(By.ClassName("room-item"));
             for (int option = 3; option < subelements.Count + 3; option++)
@@ -335,8 +348,9 @@ namespace InstaAndHygiene
                 {
                     OrderRoom.Click();
                     Thread.Sleep(1000);
+                    js.ExecuteScript("window.scrollTo(0, 0);");
                     App.KoridorTechSoft.Click();
-
+                   
                     Acts.CommonUseCase(Config.MemoText.Time);
                     Console.ForegroundColor = ConsoleColor.DarkMagenta;
                     Console.WriteLine("Done memo text for " + option + "!");
@@ -385,7 +399,7 @@ namespace InstaAndHygiene
            
             IJavaScriptExecutor js = Driver.driver as IJavaScriptExecutor;
             Thread.Sleep(1000);
-            OrderRoom.Click();
+            //OrderRoom.Click();
             js.ExecuteScript("window.scrollTo(0, 0);");
             Thread.Sleep(1000);
 
@@ -422,7 +436,7 @@ namespace InstaAndHygiene
         }
 
 
-        public static void  MunicipalityInsta()
+        public static void  MunicipalityInsta(string Time)
         {
             MyWorkOrderTasks insta = new MyWorkOrderTasks();
             IJavaScriptExecutor js = Driver.driver as IJavaScriptExecutor;
@@ -453,7 +467,13 @@ namespace InstaAndHygiene
                         Thread.Sleep(1000);
                         insta.DustFourthSoftTextBox.Click();
                         Thread.Sleep(1000);
-                        Acts.CommonUseCase(Config.MemoText.Time);
+                        insta.EditButton.Click();
+                        insta.TextArea.SendKeys(Time);
+                        Thread.Sleep(1000);
+                        insta.OkButton.Click();
+
+                        insta.DoneButton.Click();
+                        Thread.Sleep(1000);
                         Console.ForegroundColor = ConsoleColor.DarkMagenta;
                         Console.WriteLine("Done memo text for " + option + "!");
                         Console.WriteLine("Done Room for " + option + "!");
@@ -472,7 +492,13 @@ namespace InstaAndHygiene
                         Thread.Sleep(1000);
                         insta.DustFourthSoftTextBox.Click();
                         Thread.Sleep(1000);
-                        Acts.CommonUseCase(Config.MemoText.Time);
+                        insta.EditButton.Click();
+                        insta.TextArea.SendKeys(Time);
+                        Thread.Sleep(1000);
+                        insta.OkButton.Click();
+
+                        insta.DoneButton.Click();
+                        Thread.Sleep(1000);
                         Console.ForegroundColor = ConsoleColor.DarkCyan;
                         Console.WriteLine("Done memo text for room " + option + "!");
                         Console.WriteLine("Done Room " + option + "!");
@@ -493,7 +519,13 @@ namespace InstaAndHygiene
                         Thread.Sleep(1000);
                         insta.DustFourthSoftTextBox.Click();
                         Thread.Sleep(1000);
-                        Acts.CommonUseCase(Config.MemoText.Time);
+                        insta.EditButton.Click();
+                        insta.TextArea.SendKeys(Time);
+                        Thread.Sleep(1000);
+                        insta.OkButton.Click();
+
+                        insta.DoneButton.Click();
+                        Thread.Sleep(1000);
                         Console.ForegroundColor = ConsoleColor.DarkMagenta;
                         Console.WriteLine("Done memo text for " + option + "!");
                         Console.WriteLine("Done Room for " + option + "!");
@@ -511,7 +543,13 @@ namespace InstaAndHygiene
                         Thread.Sleep(1000);
                         insta.DustFourthSoftTextBox.Click();
                         Thread.Sleep(1000);
-                        Acts.CommonUseCase(Config.MemoText.Time);
+                        insta.EditButton.Click();
+                        insta.TextArea.SendKeys(Time);
+                        Thread.Sleep(1000);
+                        insta.OkButton.Click();
+
+                        insta.DoneButton.Click();
+                        Thread.Sleep(1000);
                         Console.ForegroundColor = ConsoleColor.DarkMagenta;
                         Console.WriteLine("Done memo text for " + option + "!");
                         Console.WriteLine("Done Room for " + option + "!");
@@ -537,7 +575,13 @@ namespace InstaAndHygiene
                         Thread.Sleep(1000);
                         insta.DustFourthSoftTextBox.Click();
                         Thread.Sleep(1000);
-                        Acts.CommonUseCase(Config.MemoText.Time);
+                        insta.EditButton.Click();
+                        insta.TextArea.SendKeys(Time);
+                        Thread.Sleep(1000);
+                        insta.OkButton.Click();
+
+                        insta.DoneButton.Click();
+                        Thread.Sleep(1000);
                         Console.ForegroundColor = ConsoleColor.DarkCyan;
                         Console.WriteLine("Done memo text for room " + option + "!");
                         Console.WriteLine("Done Room " + option + "!");
@@ -554,7 +598,13 @@ namespace InstaAndHygiene
                         Thread.Sleep(1000);
                         insta.DustFourthSoftTextBox.Click();
                         Thread.Sleep(1000);
-                        Acts.CommonUseCase(Config.MemoText.Time);
+                        insta.EditButton.Click();
+                        insta.TextArea.SendKeys(Time);
+                        Thread.Sleep(1000);
+                        insta.OkButton.Click();
+
+                        insta.DoneButton.Click();
+                        Thread.Sleep(1000);
                         Console.ForegroundColor = ConsoleColor.DarkCyan;
                         Console.WriteLine("Done memo text for room " + option + "!");
                         Console.WriteLine("Done Room " + option + "!");
@@ -578,6 +628,8 @@ namespace InstaAndHygiene
             common.YesButton.Click();
            
         }
+
+
         public static void  BothAppTestCase()
         {
             MyWorkOrderTasks Diff = new MyWorkOrderTasks();
@@ -763,8 +815,8 @@ namespace InstaAndHygiene
             Diff.MyWorkOrderTask.Click();
             Diff.InstaWorkOrder.Click();
             //Diff.BothRej.Click();
-            Diff.ContinueTask.Click();
-            //Diff.SatrtButton.Click();
+            //Diff.ContinueTask.Click();
+            Diff.SatrtButton.Click();
             Diff.TopAvistaPlace.Click();
            
                 IList<IWebElement> subelements = Diff.OrderListContainer.FindElements(By.ClassName("room-item"));
