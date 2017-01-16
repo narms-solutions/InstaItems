@@ -7,10 +7,10 @@ namespace InstaAndHygiene
     {
         static void Main()
         {
-            //Acts.InitializeDriver();
-            //Thread.Sleep(1000);
-           // Acts.LoginCredentials(Config.HospitalCredentials.MobileNumber, Config.HospitalCredentials.UserCare, Config.HospitalCredentials.PassWord);
-            ////Thread.Sleep(3000);
+            Acts.InitializeDriver();
+            Thread.Sleep(1000);
+            //Acts.LoginCredentials(Config.HospitalCredentials.MobileNumber, Config.HospitalCredentials.UserCare, Config.HospitalCredentials.PassWord);
+            //Thread.Sleep(3000);
 
             ////Actions.Attendance();
 
@@ -23,7 +23,7 @@ namespace InstaAndHygiene
             //Acts.SevenRoomWorkOrder(Config.MemoText.Time);
             //Acts.LoginCredentials(Config.HospitalCredentials.MobileNumber, Config.HospitalCredentials.UserCare, Config.HospitalCredentials.PassWord);
             
-            // Acts.FirstInspection();
+            //Acts.FirstInspection();
 
 
             WebActions.InitializeWebDriver();
@@ -42,7 +42,7 @@ namespace InstaAndHygiene
             //Acts.LoginCredentials(Config.FourSingleSampCredentials.MobileNumber, Config.FourSingleSampCredentials.UserCare, Config.FourSingleSampCredentials.PassWord);
             //Acts.BothAppTestCase();
 
-            ////Acts.InitializeDriver();
+            //Acts.InitializeDriver();
             //Acts.LoginCredentials(Config.FourSingleSampCredentials.MobileNumber, Config.FourSingleSampCredentials.UserCare, Config.FourSingleSampCredentials.PassWord);
             //Acts.InstaAppHygieneRejTestCase();
 

@@ -198,7 +198,7 @@ namespace InstaAndHygiene
        [FindsBy(How=How.CssSelector,Using="#avista-global-container > div.bottom-panel.type-common > div.button.menu > span")]
        public IWebElement LogOutButton { get; set; }
 
-       [FindsBy(How=How.CssSelector,Using="div > div > span.text")]
+       [FindsBy(How = How.CssSelector, Using = "#avista-global-container > div.avista-main-content.main-menu > div > div.menu-item.logout > div > span.text")]
        public IWebElement LogOut { get; set; }
 
        [FindsBy(How = How.CssSelector, Using = "#avista-global-container > div > div > div.order-list-container > div.order-group-list1 > div:nth-child(1)")]

@@ -153,11 +153,12 @@ namespace InstaAndHygiene
 
                 WorkOrder = Driver.driver.FindElement(By.CssSelector("#avista-global-container > div > div > div.order-list-container > div.order-group-list1 > div:nth-child(" + Delivery + ") > div.order-text"));
                 js.ExecuteScript("window.scrollTo(0, 0);");
-
+                Thread.Sleep(1000);
                 WorkOrder.Click();
-
+                Thread.Sleep(1000);
               //order.ContinueTask.Click();
                order.SatrtButton.Click();
+               Thread.Sleep(1000);
                 order.TopAvistaPlace.Click();
                 IList<IWebElement> subelements = order.OrderListContainer.FindElements(By.ClassName("room-item"));
                 //int length = subelements.Count;
@@ -184,6 +185,10 @@ namespace InstaAndHygiene
                         {
                             OrderRoom.Click();
                             Acts.FlowThrough(Config.MemoText.Time);
+                            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                            Console.WriteLine("Done memo text for " + option + "!");
+                            Console.WriteLine("Done Room for " + option + "!");
+
                             
                         }
 
@@ -191,17 +196,25 @@ namespace InstaAndHygiene
                     }
                     else if (option < 13)
                     {
-                        js.ExecuteScript("window.scrollBy(0,500);");
+                        js.ExecuteScript("window.scrollBy(0,400);");
                         try
                         {
                             OrderRoom.Click();
                             Acts.FlowThrough(Config.MemoText.Time);
+                            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                            Console.WriteLine("Done memo text for " + option + "!");
+                            Console.WriteLine("Done Room for " + option + "!");
+
 
                         }
                         catch (OpenQA.Selenium.StaleElementReferenceException exe)
                         {
                             OrderRoom.Click();
                             Acts.FlowThrough(Config.MemoText.Time);
+                            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                            Console.WriteLine("Done memo text for " + option + "!");
+                            Console.WriteLine("Done Room for " + option + "!");
+
                             //throw;
                         }
 
@@ -215,11 +228,19 @@ namespace InstaAndHygiene
                         {
                             OrderRoom.Click();
                             Acts.FlowThrough(Config.MemoText.Time);
+                            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                            Console.WriteLine("Done memo text for " + option + "!");
+                            Console.WriteLine("Done Room for " + option + "!");
+
                         }
                         catch (OpenQA.Selenium.StaleElementReferenceException ex)
                         {
                             OrderRoom.Click();
                             Acts.FlowThrough(Config.MemoText.Time);
+                            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                            Console.WriteLine("Done memo text for " + option + "!");
+                            Console.WriteLine("Done Room for " + option + "!");
+
                         }
 
                     }
@@ -263,6 +284,10 @@ namespace InstaAndHygiene
                     //Thread.Sleep(1000);
 
                     Acts.CommonUseCase(Config.MemoText.Time);
+                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                    Console.WriteLine("Done memo text for " + option + "!");
+                    Console.WriteLine("Done Room for " + option + "!");
+
                    // Hygiene.LogOutButton.Click();
                     //Hygiene.LogOut.Click();
                 }
@@ -279,6 +304,10 @@ namespace InstaAndHygiene
                     //Hygiene.TableDustHard.Click();
 
                     Acts.CommonUseCase(Config.MemoText.Time);
+                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                    Console.WriteLine("Done memo text for " + option + "!");
+                    Console.WriteLine("Done Room for " + option + "!");
+
                 }
 
             
@@ -309,6 +338,9 @@ namespace InstaAndHygiene
                     App.KoridorTechSoft.Click();
 
                     Acts.CommonUseCase(Config.MemoText.Time);
+                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                    Console.WriteLine("Done memo text for " + option + "!");
+                    Console.WriteLine("Done Room for " + option + "!");
 
                 }
                 else if(option == 4 )
@@ -324,6 +356,10 @@ namespace InstaAndHygiene
                     js.ExecuteScript("window.scrollBy(0,500);");
                     App.OmKladerTechHard.Click();
                     Acts.CommonUseCase(Config.MemoText.Time);
+                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                    Console.WriteLine("Done memo text for " + option + "!");
+                    Console.WriteLine("Done Room for " + option + "!");
+
                  
                 }
                 else
@@ -333,8 +369,12 @@ namespace InstaAndHygiene
                     App.OmKladerDustHard.Click();
                     Thread.Sleep(1000);
                     App.OmKladerDustHard.Click();
-
                     Acts.CommonUseCase(Config.MemoText.Time);
+                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                    Console.WriteLine("Done memo text for " + option + "!");
+                    Console.WriteLine("Done Room for " + option + "!");
+
+
 
                 }
             }
@@ -345,8 +385,10 @@ namespace InstaAndHygiene
            
             IJavaScriptExecutor js = Driver.driver as IJavaScriptExecutor;
             Thread.Sleep(1000);
-            //OrderRoom.Click();
+            OrderRoom.Click();
             js.ExecuteScript("window.scrollTo(0, 0);");
+            Thread.Sleep(1000);
+
             flow.FirstSoftTextBox.Click();
             Thread.Sleep(1000);
 
@@ -375,16 +417,7 @@ namespace InstaAndHygiene
             flow.SoilinghardBox.Click();
             Thread.Sleep(2000);
            
-            //flow.EditButton.Click();
-            //Thread.Sleep(1000);
-            //flow.TextArea.SendKeys(Time);
-            //Thread.Sleep(1000);
-            //flow.OkButton.Click();
            
-
-            //flow.DoneButton.Click();
-            //Thread.Sleep(1000);
-            //flow.YesButton.Click();
             
         }
 
@@ -399,6 +432,7 @@ namespace InstaAndHygiene
             insta.InstaWorkOrder.Click();
            // insta.ContinueTask.Click();
            insta.SatrtButton.Click();
+           Thread.Sleep(1000);
             insta.InstaTopavistaPlace.Click();
             IList<IWebElement> subelements = insta.OrderListContainer.FindElements(By.ClassName("room-item"));
             for (int option = 3; option < subelements.Count + 3; option++)
@@ -409,17 +443,36 @@ namespace InstaAndHygiene
                     js.ExecuteScript("window.scrollTo(0, 0);");
                     try
                     {
-                        
-                        Acts.InstaFlowThrough(Config.MemoText.Time);
-                        Console.ForegroundColor = ConsoleColor.DarkCyan;
-                        Console.WriteLine("Done memo text for room " + option + "!");
-                        Console.WriteLine("Done Room " + option + "!");
+
+                        OrderRoom.Click();
+                        js.ExecuteScript("window.scrollTo(0, 0);");
+                        Thread.Sleep(1000);
+                        insta.FirstSoftTextBox.Click();
+                        Thread.Sleep(1000);
+                        insta.FirstHardTextBox.Click();
+                        Thread.Sleep(1000);
+                        insta.DustFourthSoftTextBox.Click();
+                        Thread.Sleep(1000);
+                        Acts.CommonUseCase(Config.MemoText.Time);
+                        Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                        Console.WriteLine("Done memo text for " + option + "!");
+                        Console.WriteLine("Done Room for " + option + "!");
+
+                     
 
                     }
                     catch (OpenQA.Selenium.StaleElementReferenceException ex)
                     {
                         OrderRoom.Click();
-                        Acts.InstaFlowThrough(Config.MemoText.Time);
+                        js.ExecuteScript("window.scrollTo(0, 0);");
+                        Thread.Sleep(1000);
+                        insta.FirstSoftTextBox.Click();
+                        Thread.Sleep(1000);
+                        insta.FirstHardTextBox.Click();
+                        Thread.Sleep(1000);
+                        insta.DustFourthSoftTextBox.Click();
+                        Thread.Sleep(1000);
+                        Acts.CommonUseCase(Config.MemoText.Time);
                         Console.ForegroundColor = ConsoleColor.DarkCyan;
                         Console.WriteLine("Done memo text for room " + option + "!");
                         Console.WriteLine("Done Room " + option + "!");
@@ -431,16 +484,38 @@ namespace InstaAndHygiene
                     js.ExecuteScript("window.scrollBy(0,400);");
                     try
                     {
-                        Acts.InstaFlowThrough(Config.MemoText.Time);
-                        Console.WriteLine("Done memo text for room " + option + "!");
-                        Console.WriteLine("Done Room " + option + "!");
+                        OrderRoom.Click();
+                        js.ExecuteScript("window.scrollTo(0, 0);");
+                        Thread.Sleep(1000);
+                        insta.FirstSoftTextBox.Click();
+                        Thread.Sleep(1000);
+                        insta.FirstHardTextBox.Click();
+                        Thread.Sleep(1000);
+                        insta.DustFourthSoftTextBox.Click();
+                        Thread.Sleep(1000);
+                        Acts.CommonUseCase(Config.MemoText.Time);
+                        Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                        Console.WriteLine("Done memo text for " + option + "!");
+                        Console.WriteLine("Done Room for " + option + "!");
+
 
                     }
                     catch (OpenQA.Selenium.StaleElementReferenceException ex)
                     {
-                        Acts.InstaFlowThrough(Config.MemoText.Time);
-                        Console.WriteLine("Done memo text for room " + option + "!");
-                        Console.WriteLine("Done Room " + option + "!");
+                        OrderRoom.Click();
+                        js.ExecuteScript("window.scrollTo(0, 0);");
+                        Thread.Sleep(1000);
+                        insta.FirstSoftTextBox.Click();
+                        Thread.Sleep(1000);
+                        insta.FirstHardTextBox.Click();
+                        Thread.Sleep(1000);
+                        insta.DustFourthSoftTextBox.Click();
+                        Thread.Sleep(1000);
+                        Acts.CommonUseCase(Config.MemoText.Time);
+                        Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                        Console.WriteLine("Done memo text for " + option + "!");
+                        Console.WriteLine("Done Room for " + option + "!");
+
                         //throw;
                     }
 
@@ -453,16 +528,33 @@ namespace InstaAndHygiene
                     js.ExecuteScript("window.scrollBy(0,900);");
                     try
                     {
-                       
-                        Acts.InstaFlowThrough(Config.MemoText.Time);
+                        OrderRoom.Click();
+                        js.ExecuteScript("window.scrollTo(0, 0);");
+                        Thread.Sleep(1000);
+                        insta.FirstSoftTextBox.Click();
+                        Thread.Sleep(1000);
+                        insta.FirstHardTextBox.Click();
+                        Thread.Sleep(1000);
+                        insta.DustFourthSoftTextBox.Click();
+                        Thread.Sleep(1000);
+                        Acts.CommonUseCase(Config.MemoText.Time);
                         Console.ForegroundColor = ConsoleColor.DarkCyan;
                         Console.WriteLine("Done memo text for room " + option + "!");
                         Console.WriteLine("Done Room " + option + "!");
                     }
                     catch (OpenQA.Selenium.StaleElementReferenceException ex)
                     {
-                        
-                        Acts.InstaFlowThrough(Config.MemoText.Time);
+
+                        OrderRoom.Click();
+                        js.ExecuteScript("window.scrollTo(0, 0);");
+                        Thread.Sleep(1000);
+                        insta.FirstSoftTextBox.Click();
+                        Thread.Sleep(1000);
+                        insta.FirstHardTextBox.Click();
+                        Thread.Sleep(1000);
+                        insta.DustFourthSoftTextBox.Click();
+                        Thread.Sleep(1000);
+                        Acts.CommonUseCase(Config.MemoText.Time);
                         Console.ForegroundColor = ConsoleColor.DarkCyan;
                         Console.WriteLine("Done memo text for room " + option + "!");
                         Console.WriteLine("Done Room " + option + "!");
@@ -514,6 +606,7 @@ namespace InstaAndHygiene
 
             }
             Diff.LogOutButton.Click();
+            Thread.Sleep(1000);
             Diff.LogOut.Click();
         }
 
@@ -560,6 +653,7 @@ namespace InstaAndHygiene
                 
             }
             Diff.LogOutButton.Click();
+            Thread.Sleep(1000);
             Diff.LogOut.Click();
         }
 
@@ -674,12 +768,12 @@ namespace InstaAndHygiene
             Diff.TopAvistaPlace.Click();
            
                 IList<IWebElement> subelements = Diff.OrderListContainer.FindElements(By.ClassName("room-item"));
-            for (int option = 5; option < subelements.Count + 3; option++)
+            for (int option = 3; option < subelements.Count + 3; option++)
             {
                 OrderRoom = Driver.driver.FindElement(By.CssSelector("#avista-global-container > div > div > div:nth-child(" + option + ")"));
-               /////////////////Both approved//////////////////
-                OrderRoom.Click();
-                Acts.FlowThrough(Config.MemoText.Time);
+             
+                //OrderRoom.Click();
+                //Acts.FlowThrough(Config.MemoText.Time);
                    
                  if(option<5)
                 {
