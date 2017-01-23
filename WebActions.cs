@@ -72,13 +72,14 @@ namespace InstaAndHygiene
             //IJavaScriptExecutor js = (IJavaScriptExecutor)Driver.driver;
 
             IWebElement val = Driver.driver.FindElement(By.TagName("table"));
-           // IWebElement val2 = val.FindElement(By.XPath(".//tbody/tr/td[2]"));
+           //IWebElement val2 = val.FindElement(By.XPath(".//tbody/tr/td[2]"));
 
             // IList<IWebElement> rows_table = menu.Table.FindElements(By.ClassName("webix_cell "));
             using (StreamWriter writer = new StreamWriter("C:\\out.txt"))
             for (int i = 1; i < 11; i++)
             {
-                IWebElement val2 = val.FindElement(By.XPath(".//tbody/tr/td[" + (i+1) + "]"));
+
+                //IWebElement val2 = val.FindElement(By.XPath(".//tbody/tr/td[" + (i+1) + "]"));
                 Thread.Sleep(2000);
                 //Console.WriteLine(val2.Text.Trim() + "\n");
                 //val2.Click();
@@ -91,7 +92,7 @@ namespace InstaAndHygiene
                    
                         Console.SetOut(writer);
                         Console.ForegroundColor = ConsoleColor.DarkYellow;
-                        Console.WriteLine(val2.Text.Trim() + "\n\n");
+                        //Console.WriteLine(val2.Text.Trim() + "\n");
                         Console.WriteLine(item.Text.Trim() + "\n");
 
                     
@@ -112,8 +113,9 @@ namespace InstaAndHygiene
             // IList<IWebElement> rows_table = menu.Table.FindElements(By.ClassName("webix_cell "));
             for (int i = 1; i < 11; i++)
             {
-                IWebElement Newval2 = NewVal.FindElement(By.XPath(".//tbody/tr/td[" + (i+1) + "]" ));
-                Thread.Sleep(2000);
+                //Thread.Sleep(2000);
+                //IWebElement Newval2 = NewVal.FindElement(By.XPath(".//tbody/tr/td[" + (i+1) + "]" ));
+                Thread.Sleep(1000);
                 //Console.WriteLine(Newval2.Text.Trim() + "\n");
                 //val2.Click();
                 var New_test_elements = Driver.driver.FindElements(By.XPath("//div[@column='" + i + "'] "));
@@ -126,7 +128,7 @@ namespace InstaAndHygiene
                    
                         Console.SetOut(New_writer);
                         Console.ForegroundColor = ConsoleColor.DarkYellow;
-                        Console.WriteLine(Newval2.Text.Trim() + "\n\n");
+                       // Console.WriteLine(Newval2.Text.Trim() + "\n");
                         Console.WriteLine(New_item.Text.Trim() + "\n");
                       
                       
@@ -135,6 +137,8 @@ namespace InstaAndHygiene
                     }
 
               }
+
+            ////////////////////////////Compares to files ////////////////////
 
               string[] Lines1 = File.ReadAllLines("C:\\out.txt");
               string[] Lines2 = File.ReadAllLines("C:\\Newout.txt");
@@ -147,14 +151,14 @@ namespace InstaAndHygiene
                     {
                         // lines from both the file are same
                         Console.SetOut(New_OutWriter);
-                        Console.WriteLine(line + "Are Equal");
+                        Console.WriteLine(line + ". Are Equal");
                         
                     }
                     else
                     {
                         // Lines are not same
                         Console.SetOut(New_OutWriter);
-                        Console.WriteLine(line + "This line is not same");
+                        Console.WriteLine(line + ". This line is not same");
                     }
 
                 }
@@ -162,8 +166,29 @@ namespace InstaAndHygiene
                 {
                     // Doesnt exits in second file
                     Console.SetOut(New_OutWriter);
-                    Console.WriteLine(line + "Dosen't Exist in New File");
+                    Console.WriteLine(line + ". Dosen't Exist in New File");
                 }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     //for (int WebOption = 1; WebOption < 11; WebOption++)
                     //{
                     //    menu.Charts.Click();
@@ -197,8 +222,7 @@ namespace InstaAndHygiene
                         //ss.SaveAsFile(fp, System.Drawing.Imaging.ImageFormat.Png);
                         //Thread.Sleep(2000);
                         //menu.CloseChart.Click();
-            }
-         }
+           
                     //    }   //DebuggClass.PrintToFile(item.Text.ToString());
 
 
@@ -255,8 +279,7 @@ namespace InstaAndHygiene
                     //Console.ForegroundColor = ConsoleColor.Green;
                     //Console.WriteLine("Finished taking ScreenShots for first Row !");
                
-            }
-        }
+          
     
 
      

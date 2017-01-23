@@ -98,6 +98,20 @@ namespace InstaAndHygiene
         public static void StartUnplannedTask()
         {
             StartUnplannedTasks unpalnnedTask = new StartUnplannedTasks();
+            Thread.Sleep(1000);
+            Acts.StsrtUnpalnnedCommonCase();
+            Thread.Sleep(1000);
+            unpalnnedTask.WallActivity.Click();
+            Thread.Sleep(1000);
+            unpalnnedTask.SaveButton.Click();
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine("Done UnpalnnedTasks !");
+
+        }
+        public static void StsrtUnpalnnedCommonCase()
+        {
+            StartUnplannedTasks unpalnnedTask = new StartUnplannedTasks();
+            Thread.Sleep(1000);
             unpalnnedTask.StartUnPlannedOrder.Click();
             Thread.Sleep(1000);
             unpalnnedTask.StartandEndButton.Click();
@@ -115,12 +129,221 @@ namespace InstaAndHygiene
             Thread.Sleep(2000);
             unpalnnedTask.Room1.Click();
             Thread.Sleep(2000);
-            unpalnnedTask.WallActivity.Click();
+        }
+
+       
+        public static void HptlOwnQualityMethod(string Comment)
+        {
+            StartUnplannedTasks unpalnnedTask = new StartUnplannedTasks();
             Thread.Sleep(1000);
-            unpalnnedTask.SaveButton.Click();
-            Console.ForegroundColor = ConsoleColor.Gray;
+            Acts.StsrtUnpalnnedCommonCase();
+            Thread.Sleep(1000);
+
+            unpalnnedTask.HPTLOwnqualityMethod.Click();
+            Thread.Sleep(1000);
+            unpalnnedTask.PatientPlatsValue.Click();
+            Thread.Sleep(1000);
+            unpalnnedTask.PatientPlatsValue.Click();
+            Thread.Sleep(1000);
+            unpalnnedTask.PatientComment.Click();
+            Thread.Sleep(1000);
+            unpalnnedTask.ChooseFourthComment.Click();
+            Thread.Sleep(1000);
+
+            unpalnnedTask.TvattComment.Click();
+            Thread.Sleep(1000);
+            unpalnnedTask.ChooseThirdComment.Click();
+            Thread.Sleep(1000);
+
+            unpalnnedTask.AvskarmingsValue.Click();
+            Thread.Sleep(1000);
+            unpalnnedTask.AvskarmingComment.Click();
+            Thread.Sleep(1000);
+            unpalnnedTask.ChooseSecondComment.Click();
+
+            unpalnnedTask.SanitarInredningValue.Click();
+            Thread.Sleep(1000);
+            unpalnnedTask.SanitarInredningValue.Click();
+            Thread.Sleep(1000);
+            unpalnnedTask.SanitarInredningValue.Click();
+            Thread.Sleep(1000);
+            unpalnnedTask.SanitarComment.Click();
+            Thread.Sleep(1000);
+            unpalnnedTask.SanitarChooseFourthComment.Click();
+            Thread.Sleep(1000);
+
+            unpalnnedTask.GreppValue.Click();
+            Thread.Sleep(1000);
+            unpalnnedTask.GreppValue.Click();
+            Thread.Sleep(1000);
+            unpalnnedTask.GreppValue.Click();
+            Thread.Sleep(1000);
+            unpalnnedTask.GreppCommnet.Click();
+
+
+            //unpalnnedTask.BordSendComment.SendKeys(Comment);
+            //Thread.Sleep(1000);
+
+            IJavaScriptExecutor js = Driver.driver as IJavaScriptExecutor;
+            Thread.Sleep(2000);
+            js.ExecuteScript("window.scrollBy(0,300);");
+            Thread.Sleep(1000);
+            unpalnnedTask.TenicheInstallationSendComment.SendKeys(Comment);
+            Thread.Sleep(1000);
+            unpalnnedTask.OtherTeknicalValue.Click();
+            Thread.Sleep(1000);
+
+            Acts.CommonUseCase(Config.MemoText.Time);
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+            Console.WriteLine("Done memo text for " + option + "!");
             Console.WriteLine("Done UnpalnnedTasks !");
 
+        }
+
+        public static void MunicipalityOwnQualityMethod(string Comment)
+        {
+            StartUnplannedTasks MuniciQuality = new StartUnplannedTasks();
+            Thread.Sleep(1000);
+            MuniciQuality.StartUnPlannedOrder.Click();
+            Thread.Sleep(1000);
+            MuniciQuality.StartandEndButton.Click();
+            Thread.Sleep(1000);
+            MuniciQuality.Subscriber.Click();
+            Thread.Sleep(1000);
+            MuniciQuality.SelectSecondCustomer.Click();
+            Thread.Sleep(1000);
+            IJavaScriptExecutor js = Driver.driver as IJavaScriptExecutor;
+            Thread.Sleep(2000);
+            js.ExecuteScript("window.scrollBy(0,300);");
+            MuniciQuality.MTopAvistaplace.Click();
+            Thread.Sleep(1000);
+            js.ExecuteScript("window.scrollBy(0,300);");
+            Thread.Sleep(1000);
+            MuniciQuality.MFirstChild.Click();
+            Thread.Sleep(1000);
+            MuniciQuality.MFirstFirstChild.Click();
+            Thread.Sleep(1000);
+            MuniciQuality.MunipalityQualityMethod.Click();
+            Thread.Sleep(1000);
+            for (int RoomType = 1; RoomType < 5; RoomType++)
+            {
+                IWebElement Roomtype = Driver.driver.FindElement(By.CssSelector("#avista-global-container > div > div > div.content > div:nth-child("+ RoomType +")"));
+                if(RoomType==1)
+                {
+                    Roomtype.Click();
+                    Thread.Sleep(1000);
+                    MuniciQuality.FirstCeiling.Click();
+                    Thread.Sleep(1000);
+                    MuniciQuality.FirstCeiling.Click();
+                    Thread.Sleep(1000);
+                    MuniciQuality.BesokCelingComment.Click();
+                    Thread.Sleep(1000);
+                    MuniciQuality.ChooseFirstComment.Click();
+                    MuniciQuality.FirstWall.Click();
+                    Thread.Sleep(1000);
+                    MuniciQuality.FirstWall.Click();
+                    Thread.Sleep(1000);
+                    MuniciQuality.FirstWall.Click();
+                    Thread.Sleep(1000);
+                    MuniciQuality.BesokWallComment.Click();
+                    Thread.Sleep(1000);
+                    MuniciQuality.BesokChooseThirdComment.Click();
+                    Thread.Sleep(1000);
+                    MuniciQuality.FirstDoors.SendKeys(Comment);
+                    js.ExecuteScript("window.scrollBy(0,400);");
+                    Thread.Sleep(1000);
+                    MuniciQuality.FirstMats.Click();
+                    Thread.Sleep(1000);
+                    MuniciQuality.FirstMats.Click();
+                    Thread.Sleep(1000);
+                    Acts.CommonUseCase(Config.MemoText.Time);
+                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                    Console.WriteLine("Done memo text for " + option + "!");
+                    Console.WriteLine("Done UnpalnnedTasks !");
+
+
+                }
+                else if(RoomType==2)
+                {
+                    Roomtype.Click();
+                    Thread.Sleep(1000);
+                    js.ExecuteScript("window.scrollBy(0,600);");
+                    Thread.Sleep(1000);
+                    MuniciQuality.SecondCeilling.Click();
+                    Thread.Sleep(1000);
+                    MuniciQuality.ArkivCeilingComment.Click();
+                    Thread.Sleep(1000);
+                    MuniciQuality.Arkivchoosefirstcommnet.Click();
+                    Thread.Sleep(1000);
+
+                    MuniciQuality.SecondFloor.Click();
+                    Thread.Sleep(1000);
+                    MuniciQuality.ArkivFloorComment.Click();
+                    Thread.Sleep(1000);
+                    MuniciQuality.ArkivChooseThirdComment.Click();
+                    MuniciQuality.SecondWall.Click();
+                    Thread.Sleep(1000);
+                    MuniciQuality.SecondWall.Click();
+                    Thread.Sleep(1000);
+                    js.ExecuteScript("window.scrollBy(0,400);");
+                    Thread.Sleep(1000);
+                    MuniciQuality.SecondWindows.Click();
+                    Thread.Sleep(1000);
+                    Acts.CommonUseCase(Config.MemoText.Time);
+                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                    Console.WriteLine("Done memo text for " + option + "!");
+                    Console.WriteLine("Done UnpalnnedTasks !");
+
+                }
+                else if(RoomType==3)
+                {
+                    Roomtype.Click();
+                    js.ExecuteScript("window.scrollBy(0,900);");
+                    Thread.Sleep(1000);
+                    MuniciQuality.ThirdFloor.Click();
+                    Thread.Sleep(1000);
+                    MuniciQuality.ThirdFurniture.Click();
+                    Thread.Sleep(1000);
+                    MuniciQuality.ThirdFurniture.Click();
+                    Thread.Sleep(1000);
+                    MuniciQuality.ThirdFurniture.Click();
+                    Thread.Sleep(1000);
+                    MuniciQuality.ThirdFurnitureSendComment.SendKeys(Comment);
+                    MuniciQuality.ThirdMats.Click();
+                    Thread.Sleep(1000);
+                    MuniciQuality.ThirdMats.Click();
+                    Thread.Sleep(1000);
+                    Acts.CommonUseCase(Config.MemoText.Time);
+                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                    Console.WriteLine("Done memo text for " + option + "!");
+                    Console.WriteLine("Done UnpalnnedTasks !");
+
+                }
+                else
+                {
+                     Roomtype.Click();
+                    Thread.Sleep(1000);
+                    MuniciQuality.FirstCeiling.Click();
+                    Thread.Sleep(1000);
+                     MuniciQuality.FirstWall.Click();
+                    Thread.Sleep(1000);
+                     js.ExecuteScript("window.scrollBy(0,500);");
+                    Thread.Sleep(1000);
+                     MuniciQuality.SecondFloor.Click();
+                    Thread.Sleep(1000);
+                     js.ExecuteScript("window.scrollBy(0,900);");
+                    Thread.Sleep(1000);
+                    MuniciQuality.ThirdFurniture.Click();
+                    Thread.Sleep(1000);
+                    Acts.CommonUseCase(Config.MemoText.Time);
+                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                    Console.WriteLine("Done memo text for " + option + "!");
+                    Console.WriteLine("Done UnpalnnedTasks !");
+
+                }
+               
+            }
+            MuniciQuality.OwnQualitysaveButton.Click();
         }
         public static void FlowThrough(string Time)
         {
@@ -190,9 +413,7 @@ namespace InstaAndHygiene
                             Console.ForegroundColor = ConsoleColor.DarkMagenta;
                             Console.WriteLine("Done memo text for " + option + "!");
                             Console.WriteLine("Done Room for " + option + "!");
-
-
-                            
+                           
                         }
                         catch (OpenQA.Selenium.StaleElementReferenceException e)
                         {
@@ -204,7 +425,6 @@ namespace InstaAndHygiene
 
                             
                         }
-
 
                     }
                     else if (option < 13)
@@ -218,7 +438,6 @@ namespace InstaAndHygiene
                             Console.WriteLine("Done memo text for " + option + "!");
                             Console.WriteLine("Done Room for " + option + "!");
 
-
                         }
                         catch (OpenQA.Selenium.StaleElementReferenceException exe)
                         {
@@ -230,8 +449,6 @@ namespace InstaAndHygiene
 
                             //throw;
                         }
-
-
                     }
                     else
                     {
@@ -257,9 +474,6 @@ namespace InstaAndHygiene
                         }
 
                     }
-
-
-
                 }
 
             }
@@ -442,6 +656,7 @@ namespace InstaAndHygiene
             IJavaScriptExecutor js = Driver.driver as IJavaScriptExecutor;
             Thread.Sleep(1000);
             js.ExecuteScript("window.scrollBy(0,500);");
+            Thread.Sleep(1000);
             insta.MyWorkOrderTask.Click();
             insta.InstaWorkOrder.Click();
            // insta.ContinueTask.Click();
@@ -563,7 +778,7 @@ namespace InstaAndHygiene
                 
                 else
                 {
-                    js.ExecuteScript("window.scrollBy(0,900);");
+                    js.ExecuteScript("window.scrollBy(0,1000);");
                     try
                     {
                         OrderRoom.Click();
@@ -625,7 +840,7 @@ namespace InstaAndHygiene
             
             common.DoneButton.Click();
             Thread.Sleep(1000);
-            common.YesButton.Click();
+            //common.YesButton.Click();
            
         }
 
@@ -642,6 +857,7 @@ namespace InstaAndHygiene
             //Diff.BothRej.Click();
             //Diff.ContinueTask.Click();
             Diff.SatrtButton.Click();
+            Thread.Sleep(1000);
             Diff.TopAvistaPlace.Click();
            
                 IList<IWebElement> subelements = Diff.OrderListContainer.FindElements(By.ClassName("room-item"));
@@ -675,6 +891,7 @@ namespace InstaAndHygiene
             //Diff.BothRej.Click();
             //Diff.ContinueTask.Click();
             Diff.SatrtButton.Click();
+            Thread.Sleep(1000);
             Diff.TopAvistaPlace.Click();
            
             IList<IWebElement> subelements = Diff.OrderListContainer.FindElements(By.ClassName("room-item"));
@@ -721,6 +938,7 @@ namespace InstaAndHygiene
             //Diff.BothRej.Click();
             //Diff.ContinueTask.Click();
             Diff.SatrtButton.Click();
+            Thread.Sleep(1000);
             Diff.TopAvistaPlace.Click();
            
             IList<IWebElement> subelements = Diff.OrderListContainer.FindElements(By.ClassName("room-item"));
@@ -817,6 +1035,7 @@ namespace InstaAndHygiene
             //Diff.BothRej.Click();
             //Diff.ContinueTask.Click();
             Diff.SatrtButton.Click();
+            Thread.Sleep(1000);
             Diff.TopAvistaPlace.Click();
            
                 IList<IWebElement> subelements = Diff.OrderListContainer.FindElements(By.ClassName("room-item"));
