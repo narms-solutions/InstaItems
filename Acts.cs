@@ -228,7 +228,7 @@ namespace InstaAndHygiene
             for (int RoomType = 1; RoomType < 5; RoomType++)
             {
                 IWebElement Roomtype = Driver.driver.FindElement(By.CssSelector("#avista-global-container > div > div > div.content > div:nth-child("+ RoomType +")"));
-                if(RoomType==1)
+                if (RoomType == 1)
                 {
                     Roomtype.Click();
                     Thread.Sleep(1000);
@@ -239,6 +239,7 @@ namespace InstaAndHygiene
                     MuniciQuality.BesokCelingComment.Click();
                     Thread.Sleep(1000);
                     MuniciQuality.ChooseFirstComment.Click();
+                    Thread.Sleep(1000);
                     MuniciQuality.FirstWall.Click();
                     Thread.Sleep(1000);
                     MuniciQuality.FirstWall.Click();
@@ -250,12 +251,55 @@ namespace InstaAndHygiene
                     MuniciQuality.BesokChooseThirdComment.Click();
                     Thread.Sleep(1000);
                     MuniciQuality.FirstDoors.SendKeys(Comment);
+                    Thread.Sleep(1000);
                     js.ExecuteScript("window.scrollBy(0,400);");
                     Thread.Sleep(1000);
                     MuniciQuality.FirstMats.Click();
                     Thread.Sleep(1000);
                     MuniciQuality.FirstMats.Click();
                     Thread.Sleep(1000);
+                    //js.ExecuteScript("window.scrollBy(0,200);");
+                    //Thread.Sleep(1000);
+                    //MuniciQuality.SecondCeilling.Click();
+                    //Thread.Sleep(1000);
+                    //MuniciQuality.ArkivCeilingComment.Click();
+                    //Thread.Sleep(1000);
+                    //MuniciQuality.Arkivchoosefirstcommnet.Click();
+                    //Thread.Sleep(1000);
+                    ////js.ExecuteScript("window.scrollBy(0,400);");
+                    ////Thread.Sleep(1000);
+                    //MuniciQuality.SecondFloor.Click();
+                    //Thread.Sleep(1000);
+                    //MuniciQuality.ArkivFloorComment.Click();
+                    //Thread.Sleep(1000);
+                    //MuniciQuality.ArkivChooseThirdComment.Click();
+                    //Thread.Sleep(1000);
+                    //js.ExecuteScript("window.scrollBy(0,400);");
+                    //Thread.Sleep(1000);
+                    //MuniciQuality.SecondWall.Click();
+                    //Thread.Sleep(1000);
+                    //MuniciQuality.SecondWall.Click();
+                    //Thread.Sleep(1000);
+                    //js.ExecuteScript("window.scrollBy(0,400);");
+                    //Thread.Sleep(1000);
+                    //MuniciQuality.SecondWindows.Click();
+                    //Thread.Sleep(1000);
+                    //MuniciQuality.ThirdFloor.Click();
+                    //Thread.Sleep(1000);
+                    //MuniciQuality.ThirdFurniture.Click();
+                    //Thread.Sleep(1000);
+                    //MuniciQuality.ThirdFurniture.Click();
+                    //Thread.Sleep(1000);
+                    //MuniciQuality.ThirdFurniture.Click();
+                    //Thread.Sleep(1000);
+                    //MuniciQuality.ThirdFurnitureSendComment.SendKeys(Comment);
+                    //Thread.Sleep(1000);
+                    //js.ExecuteScript("window.scrollBy(0,400);");
+                    //Thread.Sleep(1000);
+                    //MuniciQuality.ThirdMats.Click();
+                    //Thread.Sleep(1000);
+                    //MuniciQuality.ThirdMats.Click();
+                    //Thread.Sleep(1000);
                     Acts.CommonUseCase(Config.MemoText.Time);
                     Console.ForegroundColor = ConsoleColor.DarkMagenta;
                     Console.WriteLine("Done memo text for " + option + "!");
@@ -267,7 +311,7 @@ namespace InstaAndHygiene
                 {
                     Roomtype.Click();
                     Thread.Sleep(1000);
-                    js.ExecuteScript("window.scrollBy(0,600);");
+                    js.ExecuteScript("window.scrollBy(0,500);");
                     Thread.Sleep(1000);
                     MuniciQuality.SecondCeilling.Click();
                     Thread.Sleep(1000);
@@ -275,18 +319,21 @@ namespace InstaAndHygiene
                     Thread.Sleep(1000);
                     MuniciQuality.Arkivchoosefirstcommnet.Click();
                     Thread.Sleep(1000);
-
+                   
                     MuniciQuality.SecondFloor.Click();
                     Thread.Sleep(1000);
                     MuniciQuality.ArkivFloorComment.Click();
                     Thread.Sleep(1000);
                     MuniciQuality.ArkivChooseThirdComment.Click();
+                    Thread.Sleep(1000);
+                    //js.ExecuteScript("window.scrollBy(0,400);");
+                    //Thread.Sleep(1000);
                     MuniciQuality.SecondWall.Click();
                     Thread.Sleep(1000);
                     MuniciQuality.SecondWall.Click();
                     Thread.Sleep(1000);
-                    js.ExecuteScript("window.scrollBy(0,400);");
-                    Thread.Sleep(1000);
+                    //js.ExecuteScript("window.scrollBy(0,400);");
+                    //Thread.Sleep(1000);
                     MuniciQuality.SecondWindows.Click();
                     Thread.Sleep(1000);
                     Acts.CommonUseCase(Config.MemoText.Time);
@@ -839,7 +886,7 @@ namespace InstaAndHygiene
             common.OkButton.Click();
             
             common.DoneButton.Click();
-            Thread.Sleep(1000);
+           Thread.Sleep(1000);
             //common.YesButton.Click();
            
         }

@@ -158,10 +158,10 @@ namespace InstaAndHygiene
        [FindsBy(How=How.CssSelector,Using="#avista-global-container > div > div > div.inspection-container > div > div:nth-child(19) > div:nth-child(2) > div > div.p-num")]
        public IWebElement ThirdMats { get; set; }
 
-       [FindsBy(How=How.CssSelector,Using="#avista-global-container > div > div > div.inspection-container > div > div:nth-child(10) > div:nth-child(2) > div > div.p-messages > select")]
+       [FindsBy(How = How.CssSelector, Using = "#avista-global-container > div > div > div.inspection-container > div > div:nth-child(10) > div:nth-child(2) > div > div.p-messages > select")]
        public IWebElement ArkivCeilingComment { get; set; }
 
-       [FindsBy(How=How.CssSelector,Using="#avista-global-container > div > div > div.inspection-container > div > div:nth-child(3) > div:nth-child(2) > div > div.p-messages > select > option:nth-child(2)")]
+       [FindsBy(How = How.CssSelector, Using = "#avista-global-container > div > div > div.inspection-container > div > div:nth-child(10) > div:nth-child(2) > div > div.p-messages > select > option:nth-child(3)")]
        public IWebElement Arkivchoosefirstcommnet { get; set; }
 
        [FindsBy(How=How.CssSelector,Using="#avista-global-container > div > div > div.inspection-container > div > div:nth-child(3) > div:nth-child(2) > div > div.p-messages > select > option:nth-child(4)")]

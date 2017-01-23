@@ -35,17 +35,17 @@ namespace InstaAndHygiene
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine("Succesfully Login !");
         }
-        public static void MenuSelection()
+        public static void MenuSelection(String Time)
         {
             WebMenu menu = new WebMenu();
             Thread.Sleep(2000);
-            Driver.driver.Navigate().GoToUrl(Config.DashBoardURL);
-            Thread.Sleep(2000);
+           // Driver.driver.Navigate().GoToUrl(Config.DashBoardURL);
+           // Thread.Sleep(2000);
             
-            menu.TestFolder.Click();
-           // Driver.driver.Navigate().GoToUrl(Config.SubscriberURL);
-            //menu.LanguageChange.Click();
-            Thread.Sleep(2000);
+           // menu.TestFolder.Click();
+           //// Driver.driver.Navigate().GoToUrl(Config.SubscriberURL);
+           // //menu.LanguageChange.Click();
+           // Thread.Sleep(2000);
             //IList<IWebElement> subelements = menu.SelLanEng.FindElements(By.XPath("/html/body/div[24]/div/div[2]/div/a[1]"));
             //Thread.Sleep(2000);
             //menu.Eng.Click();
@@ -58,7 +58,7 @@ namespace InstaAndHygiene
             //Thread.Sleep(2000);
             //menu.BottomSelection.Click();
          
-            Thread.Sleep(2000);
+            //Thread.Sleep(2000);
             //IWebElement container = Driver.driver.FindElement(By.ClassName("webix_column"));
 
             
@@ -71,37 +71,37 @@ namespace InstaAndHygiene
             //IJavaScriptExecutor js = Driver.driver as IJavaScriptExecutor;
             //IJavaScriptExecutor js = (IJavaScriptExecutor)Driver.driver;
 
-            IWebElement val = Driver.driver.FindElement(By.TagName("table"));
-           //IWebElement val2 = val.FindElement(By.XPath(".//tbody/tr/td[2]"));
+           // IWebElement val = Driver.driver.FindElement(By.TagName("table"));
+           ////IWebElement val2 = val.FindElement(By.XPath(".//tbody/tr/td[2]"));
 
-            // IList<IWebElement> rows_table = menu.Table.FindElements(By.ClassName("webix_cell "));
-            using (StreamWriter writer = new StreamWriter("C:\\out.txt"))
-            for (int i = 1; i < 11; i++)
-            {
+           // // IList<IWebElement> rows_table = menu.Table.FindElements(By.ClassName("webix_cell "));
+           // using (StreamWriter writer = new StreamWriter("C:\\out.txt"))
+           // for (int i = 1; i < 11; i++)
+           // {
 
-                //IWebElement val2 = val.FindElement(By.XPath(".//tbody/tr/td[" + (i+1) + "]"));
-                Thread.Sleep(2000);
-                //Console.WriteLine(val2.Text.Trim() + "\n");
-                //val2.Click();
-                var test_elements = Driver.driver.FindElements(By.XPath("//div[@column='" + i + "'] "));
-               //string[] lines = Regex.Split(test_elements, "\r\n");
+           //     //IWebElement val2 = val.FindElement(By.XPath(".//tbody/tr/td[" + (i+1) + "]"));
+           //     Thread.Sleep(2000);
+           //     //Console.WriteLine(val2.Text.Trim() + "\n");
+           //     //val2.Click();
+           //     var test_elements = Driver.driver.FindElements(By.XPath("//div[@column='" + i + "'] "));
+           //    //string[] lines = Regex.Split(test_elements, "\r\n");
 
-                foreach (var item in test_elements)
-                {
+           //     foreach (var item in test_elements)
+           //     {
                    
                    
-                        Console.SetOut(writer);
-                        Console.ForegroundColor = ConsoleColor.DarkYellow;
-                        //Console.WriteLine(val2.Text.Trim() + "\n");
-                        Console.WriteLine(item.Text.Trim() + "\n");
+           //             Console.SetOut(writer);
+           //             Console.ForegroundColor = ConsoleColor.DarkYellow;
+           //             //Console.WriteLine(val2.Text.Trim() + "\n");
+           //             Console.WriteLine(item.Text.Trim() + "\n");
 
                     
-                   //item.Click();
+           //        //item.Click();
                   
                      
-                    }
+           //         }
                 
-                }
+           //     }
             
             Driver.driver.Navigate().GoToUrl(Config.DashBoardURL);
             Thread.Sleep(2000);
@@ -115,7 +115,7 @@ namespace InstaAndHygiene
             {
                 //Thread.Sleep(2000);
                 //IWebElement Newval2 = NewVal.FindElement(By.XPath(".//tbody/tr/td[" + (i+1) + "]" ));
-                Thread.Sleep(1000);
+               Thread.Sleep(1000);
                 //Console.WriteLine(Newval2.Text.Trim() + "\n");
                 //val2.Click();
                 var New_test_elements = Driver.driver.FindElements(By.XPath("//div[@column='" + i + "'] "));
@@ -128,7 +128,7 @@ namespace InstaAndHygiene
                    
                         Console.SetOut(New_writer);
                         Console.ForegroundColor = ConsoleColor.DarkYellow;
-                       // Console.WriteLine(Newval2.Text.Trim() + "\n");
+                        //Console.WriteLine(Newval2.Text.Trim() + "\n");
                         Console.WriteLine(New_item.Text.Trim() + "\n");
                       
                       
@@ -149,16 +149,20 @@ namespace InstaAndHygiene
                 {
                     if (Lines1[line].Equals(Lines2[line]))
                     {
+                       
                         // lines from both the file are same
                         Console.SetOut(New_OutWriter);
+                        Console.WriteLine(Time);
                         Console.WriteLine(line + ". Are Equal");
-                        
+                       
                     }
                     else
                     {
+                        
                         // Lines are not same
                         Console.SetOut(New_OutWriter);
                         Console.WriteLine(line + ". This line is not same");
+                        Console.WriteLine(Time);
                     }
 
                 }
