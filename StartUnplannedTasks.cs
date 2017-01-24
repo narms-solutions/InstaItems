@@ -175,5 +175,36 @@ namespace InstaAndHygiene
 
        [FindsBy(How=How.CssSelector,Using="#avista-global-container > div > div > div.bottom-panel > div.button-save.box")]
        public IWebElement OwnQualitysaveButton { get; set; }
+
+       [FindsBy(How=How.CssSelector,Using="#avista-global-container > div > div.container > div.organization-item-list.ap-tree-root.expanded > div.place-item")]
+       public IWebElement NewRoomInspection { get; set; }
+
+       [FindsBy(How=How.CssSelector,Using="#avista-global-container > div > div.container > div > div")]
+       public IWebElement TestQualityMethod { get; set; }
+
+       [FindsBy(How=How.CssSelector,Using="#avista-global-container > div > div > div.content > div:nth-child(1)")]
+       public IWebElement RoomTypeOne { get; set; }
+
+       [FindsBy(How=How.CssSelector,Using="#avista-global-container > div > div > div.inspection-container > div > div:nth-child(2) > div:nth-child(2) > div > div.p-num")]
+       public IWebElement OfficeCelling { get; set; }
+
+       [FindsBy(How=How.CssSelector,Using="#avista-global-container > div > div > div.inspection-container > div > div:nth-child(3) > div:nth-child(2) > div > div.p-num")]
+       public IWebElement OfficeWalls { get; set; }
+
+       [FindsBy(How = How.CssSelector, Using = "#avista-global-container > div > div > div.inspection-container > div > div:nth-child(4) > div:nth-child(2) > div > div.p-num")]
+       public IWebElement OfficeFixtures { get; set; }
+
+       [FindsBy(How = How.CssSelector, Using = "#avista-global-container > div > div > div.inspection-container > div > div:nth-child(5) > div:nth-child(2) > div > div.p-num")]
+       public IWebElement OfficeFloor { get; set; }
+
+       [FindsBy(How = How.CssSelector, Using = "#avista-global-container > div > div > div.inspection-container > div > div:nth-child(2) > div:nth-child(2) > div > div.p-text > input")]
+       public IWebElement OfficeCellingComment { get; set; }
+
+       [FindsBy(How=How.CssSelector,Using="#avista-global-container > div > div > div.inspection-container > div > div:nth-child(4) > div:nth-child(2) > div > div.p-text > input")]
+       public IWebElement OfficeFixturesComment { get; set; }
+       
+       [FindsBy(How=How.CssSelector,Using="#avista-global-container > div > div > div.content > div:nth-child(2)")]
+       public IWebElement RoomTypeTwo { get; set; }
     }
+
 }

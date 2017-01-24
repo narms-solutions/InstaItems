@@ -326,14 +326,14 @@ namespace InstaAndHygiene
                     Thread.Sleep(1000);
                     MuniciQuality.ArkivChooseThirdComment.Click();
                     Thread.Sleep(1000);
-                    //js.ExecuteScript("window.scrollBy(0,400);");
-                    //Thread.Sleep(1000);
-                    MuniciQuality.SecondWall.Click();
+                    js.ExecuteScript("window.scrollTo(0,300);");
                     Thread.Sleep(1000);
                     MuniciQuality.SecondWall.Click();
                     Thread.Sleep(1000);
-                    //js.ExecuteScript("window.scrollBy(0,400);");
-                    //Thread.Sleep(1000);
+                    MuniciQuality.SecondWall.Click();
+                    Thread.Sleep(1000);
+                    js.ExecuteScript("window.scrollBy(0,400);");
+                    Thread.Sleep(1000);
                     MuniciQuality.SecondWindows.Click();
                     Thread.Sleep(1000);
                     Acts.CommonUseCase(Config.MemoText.Time);
@@ -887,7 +887,7 @@ namespace InstaAndHygiene
             
             common.DoneButton.Click();
            Thread.Sleep(1000);
-            //common.YesButton.Click();
+           // common.YesButton.Click();
            
         }
 

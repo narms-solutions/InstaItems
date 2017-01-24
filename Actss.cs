@@ -26,5 +26,103 @@ namespace InstaAndHygiene
            stic.DayDropDown.Click();
            Thread.Sleep(1000);
        }
+       public static void OwnQualityMethod(string Comment)
+       {
+          
+           StartUnplannedTasks plan = new StartUnplannedTasks();
+           Thread.Sleep(1000);
+           plan.StartUnPlannedOrder.Click();
+           Thread.Sleep(1000);
+           plan.StartandEndButton.Click();
+           Thread.Sleep(1000);
+           plan.Subscriber.Click();
+           Thread.Sleep(1000);
+           plan.NewRoomInspection.Click();
+           Thread.Sleep(1000);
+           plan.TestQualityMethod.Click();
+           Thread.Sleep(1000);
+           plan.RoomTypeOne.Click();
+           Thread.Sleep(1000);
+           plan.OfficeCelling.Click();
+           Thread.Sleep(1000);
+           plan.OfficeCelling.Click();
+           Thread.Sleep(1000);
+           plan.OfficeCellingComment.SendKeys(Comment);
+           Thread.Sleep(1000);
+           plan.OfficeWalls.Click();
+           Thread.Sleep(1000);
+           plan.OfficeFixtures.Click();
+           Thread.Sleep(1000);
+           plan.OfficeFixturesComment.SendKeys(Comment);
+           Thread.Sleep(1000);
+           plan.OfficeFloor.Click();
+           Thread.Sleep(1000);
+           Actss.UseCase(Config.MemoText.Time);
+
+           plan.RoomTypeOne.Click();
+           Thread.Sleep(1000);
+           //plan.OfficeCelling.Click();
+           //Thread.Sleep(1000);
+           plan.OfficeCellingComment.SendKeys(Comment);
+           Thread.Sleep(1000);
+           plan.OfficeWalls.Click();
+           Thread.Sleep(1000);
+           plan.OfficeFixtures.Click();
+           plan.OfficeFixtures.Click();
+           Thread.Sleep(1000);
+           plan.OfficeFixturesComment.SendKeys(Comment);
+           Thread.Sleep(1000);
+           plan.OfficeFloor.Click();
+           Thread.Sleep(1000);
+           Actss.UseCase(Config.MemoText.Time);
+
+           plan.RoomTypeTwo.Click();
+           Thread.Sleep(1000);
+           //plan.OfficeCelling.Click();
+           //Thread.Sleep(1000);
+           plan.OfficeCellingComment.SendKeys(Comment);
+           Thread.Sleep(1000);
+           plan.OfficeWalls.Click();
+           Thread.Sleep(1000);
+           plan.OfficeFixtures.Click();
+           Thread.Sleep(1000);
+           plan.OfficeFloor.Click();
+           Thread.Sleep(1000);
+           Actss.UseCase(Config.MemoText.Time);
+
+           plan.RoomTypeTwo.Click();
+           Thread.Sleep(1000);
+           plan.OfficeCelling.Click();
+           plan.OfficeCelling.Click();
+           plan.OfficeCellingComment.SendKeys(Comment);
+           Thread.Sleep(1000);
+           plan.OfficeWalls.Click();
+           Thread.Sleep(1000);
+           plan.OfficeFixtures.Click();
+           Thread.Sleep(1000);
+           plan.OfficeFixturesComment.SendKeys(Comment);
+           Thread.Sleep(1000);
+           plan.OfficeFloor.Click();
+           plan.OfficeFloor.Click();
+           Thread.Sleep(1000);
+           Actss.UseCase(Config.MemoText.Time);
+          
+         
+           plan.OwnQualitysaveButton.Click();
+
+
+       }
+       public static void UseCase(string Time)
+       {
+           MyWorkOrderTasks common = new MyWorkOrderTasks();
+           common.EditButton.Click();
+           Thread.Sleep(1000);
+           common.TextArea.SendKeys(Time);
+           Thread.Sleep(1000);
+           common.OkButton.Click();
+           Thread.Sleep(1000);
+           common.DoneButton.Click();
+           Thread.Sleep(1000);
+       }
     }
 }

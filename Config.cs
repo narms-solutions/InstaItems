@@ -36,7 +36,7 @@ namespace InstaAndHygiene
        public static class MemoText
        {
            public static string Time = DateTime.Now.ToString();
-           public static string comment = "Doesn't find bord on this room";
+           public static string comment = "Good result!";
        }
       public static class SveenteenRoomUrl
       {

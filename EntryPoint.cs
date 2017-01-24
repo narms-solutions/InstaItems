@@ -7,10 +7,11 @@ namespace InstaAndHygiene
     {
         static void Main()
         {
-            //Acts.InitializeDriver();
-            //Thread.Sleep(1000);
-            //Acts.LoginCredentials(Config.HospitalCredentials.MobileNumber, Config.HospitalCredentials.UserCare, Config.HospitalCredentials.PassWord);
-            ////Thread.Sleep(3000);
+            Acts.InitializeDriver();
+            Thread.Sleep(1000);
+            Acts.LoginCredentials(Config.HospitalCredentials.MobileNumber, Config.HospitalCredentials.UserCare, Config.HospitalCredentials.PassWord);
+            //Thread.Sleep(3000);
+            Actss.OwnQualityMethod(Config.MemoText.comment);
             //Actss.MobileStatistics();
             ////Acts.Attendance();
 
@@ -26,11 +27,11 @@ namespace InstaAndHygiene
            //Acts.FirstInspection();
 
 
-            WebActions.InitializeWebDriver();
-            Thread.Sleep(1000);
-            WebActions.WebloginCredentials(Config.WebLoginCredentials.WebUserCare, Config.WebLoginCredentials.WebPassWord);
-            WebActions.MenuSelection(Config.MemoText.Time);
-            //WebActions.screenshot();
+            //WebActions.InitializeWebDriver();
+            //Thread.Sleep(1000);
+            //WebActions.WebloginCredentials(Config.WebLoginCredentials.WebUserCare, Config.WebLoginCredentials.WebPassWord);
+            //WebActions.MenuSelection(Config.MemoText.Time);
+            ////WebActions.screenshot();
 
 
             //Acts.LoginCredentials(Config.HygieneCredentials.MobileNumber, Config.HygieneCredentials.UserCare, Config.HygieneCredentials.PassWord);
