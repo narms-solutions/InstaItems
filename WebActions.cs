@@ -22,6 +22,7 @@ namespace InstaAndHygiene
         }
         public static string WebOption = "";
         static IWebElement ChartsList;
+        
         public static void WebloginCredentials(string WebUserName, string Webpassword)
         {
             LoginPage login = new LoginPage();
@@ -39,13 +40,13 @@ namespace InstaAndHygiene
         {
             WebMenu menu = new WebMenu();
             Thread.Sleep(2000);
-           // Driver.driver.Navigate().GoToUrl(Config.DashBoardURL);
-           // Thread.Sleep(2000);
-            
-           // menu.TestFolder.Click();
-           //// Driver.driver.Navigate().GoToUrl(Config.SubscriberURL);
-           // //menu.LanguageChange.Click();
-           // Thread.Sleep(2000);
+            Driver.driver.Navigate().GoToUrl(Config.DashBoardURL);
+            Thread.Sleep(2000);
+
+            menu.TestFolder.Click();
+            // Driver.driver.Navigate().GoToUrl(Config.SubscriberURL);
+            //menu.LanguageChange.Click();
+            Thread.Sleep(2000);
             //IList<IWebElement> subelements = menu.SelLanEng.FindElements(By.XPath("/html/body/div[24]/div/div[2]/div/a[1]"));
             //Thread.Sleep(2000);
             //menu.Eng.Click();
@@ -57,51 +58,51 @@ namespace InstaAndHygiene
             //menu.StatusEnded.Click();
             //Thread.Sleep(2000);
             //menu.BottomSelection.Click();
-         
+
             //Thread.Sleep(2000);
             //IWebElement container = Driver.driver.FindElement(By.ClassName("webix_column"));
 
-            
-            
-         
-          
-            // IList<IWebElement> rows_table = menu.Temp1.FindElements(By.LinkText("column"));
-            //  menu.Table.Click();
 
-            //IJavaScriptExecutor js = Driver.driver as IJavaScriptExecutor;
+
+
+
+            IList<IWebElement> rows_table = menu.Temp1.FindElements(By.LinkText("column"));
+           // menu.Table.Click();
+
+            IJavaScriptExecutor js = Driver.driver as IJavaScriptExecutor;
             //IJavaScriptExecutor js = (IJavaScriptExecutor)Driver.driver;
 
-           // IWebElement val = Driver.driver.FindElement(By.TagName("table"));
-           ////IWebElement val2 = val.FindElement(By.XPath(".//tbody/tr/td[2]"));
+            //IWebElement val = Driver.driver.FindElement(By.TagName("table"));
+            //IWebElement val2 = val.FindElement(By.XPath(".//tbody/tr/td[2]"));
 
-           // // IList<IWebElement> rows_table = menu.Table.FindElements(By.ClassName("webix_cell "));
-           // using (StreamWriter writer = new StreamWriter("C:\\out.txt"))
-           // for (int i = 1; i < 11; i++)
-           // {
+            // IList<IWebElement> rows_table = menu.Table.FindElements(By.ClassName("webix_cell "));
+            using (StreamWriter writer = new StreamWriter("C:\\out.txt"))
+                for (int i = 1; i < 11; i++)
+                {
 
-           //     //IWebElement val2 = val.FindElement(By.XPath(".//tbody/tr/td[" + (i+1) + "]"));
-           //     Thread.Sleep(2000);
-           //     //Console.WriteLine(val2.Text.Trim() + "\n");
-           //     //val2.Click();
-           //     var test_elements = Driver.driver.FindElements(By.XPath("//div[@column='" + i + "'] "));
-           //    //string[] lines = Regex.Split(test_elements, "\r\n");
+                    //IWebElement val2 = val.FindElement(By.XPath(".//tbody/tr/td[" + (i+1) + "]"));
+                    Thread.Sleep(2000);
+                    //Console.WriteLine(val2.Text.Trim() + "\n");
+                    //val2.Click();
+                    var test_elements = Driver.driver.FindElements(By.XPath("//div[@column='" + i + "'] "));
+                    //string[] lines = Regex.Split(test_elements, "\r\n");
 
-           //     foreach (var item in test_elements)
-           //     {
-                   
-                   
-           //             Console.SetOut(writer);
-           //             Console.ForegroundColor = ConsoleColor.DarkYellow;
-           //             //Console.WriteLine(val2.Text.Trim() + "\n");
-           //             Console.WriteLine(item.Text.Trim() + "\n");
+                    foreach (var item in test_elements)
+                    {
 
-                    
-           //        //item.Click();
-                  
-                     
-           //         }
-                
-           //     }
+
+                        Console.SetOut(writer);
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+                        //Console.WriteLine(val2.Text.Trim() + "\n");
+                        Console.WriteLine(item.Text.Trim() + "\n");
+                       
+
+                        //item.Click();
+
+
+                    }
+
+                }
             
             Driver.driver.Navigate().GoToUrl(Config.DashBoardURL);
             Thread.Sleep(2000);
@@ -137,8 +138,8 @@ namespace InstaAndHygiene
                     }
 
               }
-
-            ////////////////////////////Compares to files ////////////////////
+            
+            ////////////////////////////Comparing to files ////////////////////
 
               string[] Lines1 = File.ReadAllLines("C:\\out.txt");
               string[] Lines2 = File.ReadAllLines("C:\\Newout.txt");

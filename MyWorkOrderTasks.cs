@@ -226,7 +226,21 @@ namespace InstaAndHygiene
        [FindsBy(How=How.CssSelector,Using="#avista-global-container > div > div > div.order-list-container > div.order-group-list1 > div:nth-child(4) > div.order-text")]
        public IWebElement BothRej { get; set; }
 
+       [FindsBy(How=How.CssSelector,Using="#avista-global-container > div > div > div.order-list-container > div.order-group-list1 > div:nth-child(1)")]
+       public IWebElement WorkOrderRoomInspection { get; set; }
 
+       [FindsBy(How = How.CssSelector, Using = "#avista-global-container > div > div > div.order-list-container > div.order-group-list1 > div:nth-child(1)")]
+       public IWebElement WorkOrderUnitInspection { get; set; }
+
+       [FindsBy(How=How.CssSelector,Using="#avista-global-container > div > div.container > div:nth-child(2) > div")]
+       public IWebElement WorkOrderActivity { get; set; }
+
+       [FindsBy(How=How.CssSelector,Using="#avista-global-container > div > div > div.order-list-container > div.order-group-list1 > div:nth-child(1)")]
+       public IWebElement OngoingInspection { get; set; }
+
+       [FindsBy(How=How.CssSelector,Using="#avista-global-container > div > div > div.bottom-panel > div.button-end")]
+       public IWebElement EndButton { get; set; }
+      
 
     }
 }

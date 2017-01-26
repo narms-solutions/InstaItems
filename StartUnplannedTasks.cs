@@ -39,7 +39,7 @@ namespace InstaAndHygiene
        public IWebElement SaveButton { get; set; }
 
        /////////////////////////////////////OWN Quality Method for Hospital Customer //////////////////////////////////////
-       [FindsBy(How=How.CssSelector,Using="#avista-global-container > div > div.container > div:nth-child(6) > div > span")]
+       [FindsBy(How = How.CssSelector, Using = "#avista-global-container > div > div.container > div:nth-child(7) > div")]
        public IWebElement HPTLOwnqualityMethod { get; set; }
 
        [FindsBy(How=How.CssSelector,Using="#avista-global-container > div > div > div.inspection-container > div > div:nth-child(2) > div:nth-child(2) > div > div.p-num")]

@@ -53,12 +53,15 @@ namespace InstaAndHygiene
         public static void Attendance()
         {
             Attendance attend = new Attendance();
+            MyWorkOrderTasks task =new MyWorkOrderTasks();
+            Thread.Sleep(2000);
             attend.MobileAttendance.Click();
+            Thread.Sleep(1000);
             IList<IWebElement> subelements = attend.AttendanceContainer.FindElements(By.ClassName("user-item"));
             string ContainerSize = subelements.Count.ToString();
-            Assert.AreEqual(ContainerSize, "4");
+            Assert.AreEqual(ContainerSize, "5");
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Number of orders found for Care user:" + ContainerSize);
+            Console.WriteLine("Number of staff members are :" + ContainerSize);
             Thread.Sleep(3000);
             attend.BackButton.Click();
             //Console.WriteLine("Number of orders found for Care user:" + ContainerSize ); //Count=6
@@ -66,6 +69,9 @@ namespace InstaAndHygiene
             //Thread.Sleep(3000);
             //js.ExecuteScript("window.scrollBy(0,900);");
             //js.ExecuteScript("window.scrollTo(0, 0);");
+            //task.LogOutButton.Click();
+            //Thread.Sleep(1000);
+            //task.LogOut.Click();
         }
         public static void EventReport(string Time)
         {
@@ -141,44 +147,56 @@ namespace InstaAndHygiene
 
             unpalnnedTask.HPTLOwnqualityMethod.Click();
             Thread.Sleep(1000);
-            unpalnnedTask.PatientPlatsValue.Click();
+            Acts.HptlOwnQualityCommonUse(Config.MemoText.comment);
             Thread.Sleep(1000);
-            unpalnnedTask.PatientPlatsValue.Click();
+            
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+            Console.WriteLine("Done memo text for " + option + "!");
+            Console.WriteLine("Done UnpalnnedTasks !");
+
+        }
+        public static void HptlOwnQualityCommonUse(string Comment)
+        {
+            StartUnplannedTasks unpalnnedTask1 = new StartUnplannedTasks();
             Thread.Sleep(1000);
-            unpalnnedTask.PatientComment.Click();
+            unpalnnedTask1.PatientPlatsValue.Click();
             Thread.Sleep(1000);
-            unpalnnedTask.ChooseFourthComment.Click();
+            unpalnnedTask1.PatientPlatsValue.Click();
+            Thread.Sleep(1000);
+            unpalnnedTask1.PatientComment.Click();
+            Thread.Sleep(1000);
+            unpalnnedTask1.ChooseFourthComment.Click();
             Thread.Sleep(1000);
 
-            unpalnnedTask.TvattComment.Click();
+            unpalnnedTask1.TvattComment.Click();
             Thread.Sleep(1000);
-            unpalnnedTask.ChooseThirdComment.Click();
-            Thread.Sleep(1000);
-
-            unpalnnedTask.AvskarmingsValue.Click();
-            Thread.Sleep(1000);
-            unpalnnedTask.AvskarmingComment.Click();
-            Thread.Sleep(1000);
-            unpalnnedTask.ChooseSecondComment.Click();
-
-            unpalnnedTask.SanitarInredningValue.Click();
-            Thread.Sleep(1000);
-            unpalnnedTask.SanitarInredningValue.Click();
-            Thread.Sleep(1000);
-            unpalnnedTask.SanitarInredningValue.Click();
-            Thread.Sleep(1000);
-            unpalnnedTask.SanitarComment.Click();
-            Thread.Sleep(1000);
-            unpalnnedTask.SanitarChooseFourthComment.Click();
+            unpalnnedTask1.ChooseThirdComment.Click();
             Thread.Sleep(1000);
 
-            unpalnnedTask.GreppValue.Click();
+            unpalnnedTask1.AvskarmingsValue.Click();
             Thread.Sleep(1000);
-            unpalnnedTask.GreppValue.Click();
+            unpalnnedTask1.AvskarmingComment.Click();
             Thread.Sleep(1000);
-            unpalnnedTask.GreppValue.Click();
+            unpalnnedTask1.ChooseSecondComment.Click();
+
+            unpalnnedTask1.SanitarInredningValue.Click();
             Thread.Sleep(1000);
-            unpalnnedTask.GreppCommnet.Click();
+            unpalnnedTask1.SanitarInredningValue.Click();
+            Thread.Sleep(1000);
+            unpalnnedTask1.SanitarInredningValue.Click();
+            Thread.Sleep(1000);
+            unpalnnedTask1.SanitarComment.Click();
+            Thread.Sleep(1000);
+            unpalnnedTask1.SanitarChooseFourthComment.Click();
+            Thread.Sleep(1000);
+
+            unpalnnedTask1.GreppValue.Click();
+            Thread.Sleep(1000);
+            unpalnnedTask1.GreppValue.Click();
+            Thread.Sleep(1000);
+            unpalnnedTask1.GreppValue.Click();
+            Thread.Sleep(1000);
+            unpalnnedTask1.GreppCommnet.Click();
 
 
             //unpalnnedTask.BordSendComment.SendKeys(Comment);
@@ -188,16 +206,11 @@ namespace InstaAndHygiene
             Thread.Sleep(2000);
             js.ExecuteScript("window.scrollBy(0,300);");
             Thread.Sleep(1000);
-            unpalnnedTask.TenicheInstallationSendComment.SendKeys(Comment);
+            unpalnnedTask1.TenicheInstallationSendComment.SendKeys(Comment);
             Thread.Sleep(1000);
-            unpalnnedTask.OtherTeknicalValue.Click();
+            unpalnnedTask1.OtherTeknicalValue.Click();
             Thread.Sleep(1000);
-
             Acts.CommonUseCase(Config.MemoText.Time);
-            Console.ForegroundColor = ConsoleColor.DarkMagenta;
-            Console.WriteLine("Done memo text for " + option + "!");
-            Console.WriteLine("Done UnpalnnedTasks !");
-
         }
 
         public static void MunicipalityOwnQualityMethod(string Comment)
@@ -391,6 +404,11 @@ namespace InstaAndHygiene
                
             }
             MuniciQuality.OwnQualitysaveButton.Click();
+            Thread.Sleep(1000);
+            MyWorkOrderTasks Task = new MyWorkOrderTasks();
+            Task.LogOutButton.Click();
+            Thread.Sleep(1000);
+            Task.LogOut.Click();
         }
         public static void FlowThrough(string Time)
         {
@@ -524,7 +542,9 @@ namespace InstaAndHygiene
                 }
 
             }
-
+            order.LogOutButton.Click();
+            Thread.Sleep(1000);
+            order.LogOut.Click();
         }
         public static void HygieneQualityCheck(String Time)
         {
@@ -653,6 +673,9 @@ namespace InstaAndHygiene
 
                 }
             }
+            App.LogOutButton.Click();
+            Thread.Sleep(1000);
+            App.LogOut.Click();
         }
         public static void InstaFlowThrough(string Time)
         {
@@ -887,7 +910,7 @@ namespace InstaAndHygiene
             
             common.DoneButton.Click();
            Thread.Sleep(1000);
-           // common.YesButton.Click();
+           common.YesButton.Click();
            
         }
 

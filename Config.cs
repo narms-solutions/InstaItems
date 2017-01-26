@@ -33,6 +33,12 @@ namespace InstaAndHygiene
            public static string UserCare = "casea2@h.se";
            public static string PassWord = "12340";
        }
+       public static class WorkOrderOwnQualityCredentials
+       {
+           public static string MobileNumber = "0705587800";
+           public static string UserCare = "own@quality.se";
+           public static string PassWord = "12340";
+       }
        public static class MemoText
        {
            public static string Time = DateTime.Now.ToString();
