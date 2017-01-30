@@ -5,6 +5,7 @@ namespace InstaAndHygiene
    public class Config
     {
        public static string BaseURL = "https://a5.avistatime.com/mobile/";
+       //public static string BaseURL = "https://a5test.avistatime.com/mobile/";
        public static string WebURL = "https://a5.avistatime.com/login.php";
        public static string SubscriberURL = "https://a5.avistatime.com/index.php#reports_insta_hygiene";
        public static string DashBoardURL = "https://a5.avistatime.com/index.php#dashboard";

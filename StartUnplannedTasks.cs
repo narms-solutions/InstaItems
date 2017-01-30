@@ -32,7 +32,7 @@ namespace InstaAndHygiene
        [FindsBy(How = How.CssSelector, Using = "#avista-global-container > div > div.container > div.organization-item-list.ap-tree-root.expanded > div.place-item-list.expanded > div.place-item-list.expanded > div.place-item-list.expanded > div:nth-child(1) > div.place-title")]
        public IWebElement Room1 { get; set; }
 
-       [FindsBy(How = How.CssSelector, Using = "#avista-global-container > div > div.container > div:nth-child(1) > div > span.indicator")]
+       [FindsBy(How = How.CssSelector, Using = "#avista-global-container > div > div.container > div.activity-item-list.expanded > div:nth-child(1) > div > span.indicator")]
        public IWebElement WallActivity { get; set; }
 
        [FindsBy(How = How.CssSelector, Using = "#avista-global-container > div > div.bottom-panel > div.button-send > span")]
@@ -205,6 +205,9 @@ namespace InstaAndHygiene
        
        [FindsBy(How=How.CssSelector,Using="#avista-global-container > div > div > div.content > div:nth-child(2)")]
        public IWebElement RoomTypeTwo { get; set; }
+
+       [FindsBy(How = How.CssSelector, Using = "#avista-global-container > div > div.container > div:nth-child(1)")]
+       public IWebElement RoomCleaning { get; set; }
     }
 
 }

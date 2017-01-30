@@ -59,7 +59,7 @@ namespace InstaAndHygiene
             Thread.Sleep(1000);
             IList<IWebElement> subelements = attend.AttendanceContainer.FindElements(By.ClassName("user-item"));
             string ContainerSize = subelements.Count.ToString();
-            Assert.AreEqual(ContainerSize, "5");
+            Assert.AreEqual(ContainerSize, "4");
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Number of staff members are :" + ContainerSize);
             Thread.Sleep(3000);
@@ -106,6 +106,8 @@ namespace InstaAndHygiene
             StartUnplannedTasks unpalnnedTask = new StartUnplannedTasks();
             Thread.Sleep(1000);
             Acts.StsrtUnpalnnedCommonCase();
+            Thread.Sleep(1000);
+            unpalnnedTask.RoomCleaning.Click();
             Thread.Sleep(1000);
             unpalnnedTask.WallActivity.Click();
             Thread.Sleep(1000);
@@ -729,12 +731,12 @@ namespace InstaAndHygiene
             Thread.Sleep(1000);
             insta.MyWorkOrderTask.Click();
             insta.InstaWorkOrder.Click();
-           // insta.ContinueTask.Click();
-           insta.SatrtButton.Click();
+            insta.ContinueTask.Click();
+           //insta.SatrtButton.Click();
            Thread.Sleep(1000);
             insta.InstaTopavistaPlace.Click();
             IList<IWebElement> subelements = insta.OrderListContainer.FindElements(By.ClassName("room-item"));
-            for (int option = 3; option < subelements.Count + 3; option++)
+            for (int option = 16; option < subelements.Count + 3; option++)
             {
                 OrderRoom = Driver.driver.FindElement(By.CssSelector("#avista-global-container > div > div > div:nth-child(" + option + ")"));
                 if(option<9)

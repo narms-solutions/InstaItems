@@ -22,7 +22,9 @@ namespace InstaAndHygiene
         }
         public static string WebOption = "";
         static IWebElement ChartsList;
-        
+      //  static IWebElement TestResult;
+        public static string TestResult = "";
+        public static string NewTestResult = "";
         public static void WebloginCredentials(string WebUserName, string Webpassword)
         {
             LoginPage login = new LoginPage();
@@ -68,7 +70,7 @@ namespace InstaAndHygiene
 
             IList<IWebElement> rows_table = menu.Temp1.FindElements(By.LinkText("column"));
            // menu.Table.Click();
-
+            
             IJavaScriptExecutor js = Driver.driver as IJavaScriptExecutor;
             //IJavaScriptExecutor js = (IJavaScriptExecutor)Driver.driver;
 
@@ -76,7 +78,7 @@ namespace InstaAndHygiene
             //IWebElement val2 = val.FindElement(By.XPath(".//tbody/tr/td[2]"));
 
             // IList<IWebElement> rows_table = menu.Table.FindElements(By.ClassName("webix_cell "));
-            using (StreamWriter writer = new StreamWriter("C:\\out.txt"))
+            //using (StreamWriter writer = new StreamWriter("C:\\out.txt"))
                 for (int i = 1; i < 11; i++)
                 {
 
@@ -91,19 +93,19 @@ namespace InstaAndHygiene
                     {
 
 
-                        Console.SetOut(writer);
+                       // Console.SetOut(writer);
                         Console.ForegroundColor = ConsoleColor.DarkYellow;
                         //Console.WriteLine(val2.Text.Trim() + "\n");
-                        Console.WriteLine(item.Text.Trim() + "\n");
-                       
+                       // Console.WriteLine(item.Text.Trim() + "\n");
 
+                        TestResult = item.Text.Trim();
                         //item.Click();
-
+                        Console.WriteLine(TestResult);
 
                     }
 
                 }
-            
+           
             Driver.driver.Navigate().GoToUrl(Config.DashBoardURL);
             Thread.Sleep(2000);
             menu.NewResult.Click();
@@ -127,11 +129,13 @@ namespace InstaAndHygiene
 
              
                    
-                        Console.SetOut(New_writer);
+                        //Console.SetOut(New_writer);
                         Console.ForegroundColor = ConsoleColor.DarkYellow;
                         //Console.WriteLine(Newval2.Text.Trim() + "\n");
-                        Console.WriteLine(New_item.Text.Trim() + "\n");
-                      
+                        //Console.WriteLine(New_item.Text.Trim() + "\n");
+                        NewTestResult = New_item.Text.Trim();
+                        //item.Click();
+                        Console.WriteLine(NewTestResult);
                       
 
                    
@@ -141,38 +145,46 @@ namespace InstaAndHygiene
             
             ////////////////////////////Comparing to files ////////////////////
 
-              string[] Lines1 = File.ReadAllLines("C:\\out.txt");
-              string[] Lines2 = File.ReadAllLines("C:\\Newout.txt");
-              using (StreamWriter New_OutWriter = new StreamWriter("C:\\Result.txt"))
-              for (int line = 0; line < Lines1.Length; line++)
-            {
-                if (line < Lines2.Length)
-                {
-                    if (Lines1[line].Equals(Lines2[line]))
-                    {
+            //  //string[] Lines1 = File.ReadAllLines("C:\\out.txt");
+            //  //string[] Lines2 = File.ReadAllLines("C:\\Newout.txt");
+            //  //using (StreamWriter New_OutWriter = new StreamWriter("C:\\Result.txt"))
+            //  for (int line = 0; line < Lines1.Length; line++)
+            //{
+            //    if (line < Lines2.Length)
+            //    {
+            //        if (Lines1[line].Equals(Lines2[line]))
+            //        {
                        
-                        // lines from both the file are same
-                        Console.SetOut(New_OutWriter);
-                        Console.WriteLine(Time);
-                        Console.WriteLine(line + ". Are Equal");
+            //            // lines from both the file are same
+            //            //Console.SetOut(New_OutWriter);
+            //            Console.WriteLine(Time);
+            //            Console.WriteLine(line + ". Are Equal");
                        
-                    }
-                    else
-                    {
+            //        }
+            //        else
+            //        {
                         
-                        // Lines are not same
-                        Console.SetOut(New_OutWriter);
-                        Console.WriteLine(line + ". This line is not same");
-                        Console.WriteLine(Time);
-                    }
+            //            // Lines are not same
+            //            Console.SetOut(New_OutWriter);
+            //            Console.WriteLine(line + ". This line is not same");
+            //            Console.WriteLine(Time);
+            //        }
 
-                }
-                else
-                {
-                    // Doesnt exits in second file
-                    Console.SetOut(New_OutWriter);
-                    Console.WriteLine(line + ". Dosen't Exist in New File");
-                }
+            //    }
+            //    else
+            //    {
+            //        // Doesnt exits in second file
+            //        Console.SetOut(New_OutWriter);
+            //        Console.WriteLine(line + ". Dosen't Exist in New File");
+            //    }
+            //}
+            if (TestResult==NewTestResult)
+            {
+                Console.WriteLine(" Are Equal");
+            }
+            else
+            {
+                Console.WriteLine( " This line is not same");
             }
         }
     }
