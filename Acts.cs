@@ -23,6 +23,18 @@ namespace InstaAndHygiene
 
         static IWebElement WorkOrder;
         static IWebElement OrderRoom;
+
+        public static void ServerSettings(string serverlink)
+        {
+            EventReporting setting = new EventReporting();
+            setting.MainSetting.Click();
+            Thread.Sleep(1000);
+            setting.ClearServerLink.Clear();
+            Thread.Sleep(1000);
+            setting.ClearServerLink.SendKeys(serverlink);
+            Thread.Sleep(1000);
+            setting.SettingsBackButton.Click();
+        }
         public static void LoginCredentials(string MobileNumber, string UserName, string password)
         {
             LoginPage login = new LoginPage();
@@ -107,8 +119,8 @@ namespace InstaAndHygiene
             Thread.Sleep(1000);
             Acts.StsrtUnpalnnedCommonCase();
             Thread.Sleep(1000);
-            unpalnnedTask.RoomCleaning.Click();
-            Thread.Sleep(1000);
+            //unpalnnedTask.RoomCleaning.Click();
+            //Thread.Sleep(1000);
             unpalnnedTask.WallActivity.Click();
             Thread.Sleep(1000);
             unpalnnedTask.SaveButton.Click();
@@ -459,8 +471,8 @@ namespace InstaAndHygiene
                 Thread.Sleep(1000);
                 WorkOrder.Click();
                 Thread.Sleep(1000);
-               //order.ContinueTask.Click();
-               order.SatrtButton.Click();
+               order.ContinueTask.Click();
+               //order.SatrtButton.Click();
                Thread.Sleep(1000);
                 order.TopAvistaPlace.Click();
                 IList<IWebElement> subelements = order.OrderListContainer.FindElements(By.ClassName("room-item"));
@@ -624,7 +636,7 @@ namespace InstaAndHygiene
             Thread.Sleep(1000);
             App.TopAvistaPlace.Click();
             IList<IWebElement> subelements = App.OrderListContainer.FindElements(By.ClassName("room-item"));
-            for (int option = 3; option < subelements.Count + 3; option++)
+            for (int option = 5; option < subelements.Count + 3; option++)
             {
                 OrderRoom = Driver.driver.FindElement(By.CssSelector("#avista-global-container > div > div > div:nth-child(" + option + ")"));
                 if (option == 3)
@@ -731,12 +743,12 @@ namespace InstaAndHygiene
             Thread.Sleep(1000);
             insta.MyWorkOrderTask.Click();
             insta.InstaWorkOrder.Click();
-            insta.ContinueTask.Click();
-           //insta.SatrtButton.Click();
+           // insta.ContinueTask.Click();
+           insta.SatrtButton.Click();
            Thread.Sleep(1000);
             insta.InstaTopavistaPlace.Click();
             IList<IWebElement> subelements = insta.OrderListContainer.FindElements(By.ClassName("room-item"));
-            for (int option = 16; option < subelements.Count + 3; option++)
+            for (int option = 3; option < subelements.Count + 3; option++)
             {
                 OrderRoom = Driver.driver.FindElement(By.CssSelector("#avista-global-container > div > div > div:nth-child(" + option + ")"));
                 if(option<9)
@@ -1008,13 +1020,13 @@ namespace InstaAndHygiene
             Diff.MyWorkOrderTask.Click();
             Diff.InstaWorkOrder.Click();
             //Diff.BothRej.Click();
-            //Diff.ContinueTask.Click();
+           // Diff.ContinueTask.Click();
             Diff.SatrtButton.Click();
             Thread.Sleep(1000);
             Diff.TopAvistaPlace.Click();
            
             IList<IWebElement> subelements = Diff.OrderListContainer.FindElements(By.ClassName("room-item"));
-            for (int option = 3; option < subelements.Count + 3; option++)
+            for (int option =3; option < subelements.Count + 3; option++)
             {
                 OrderRoom = Driver.driver.FindElement(By.CssSelector("#avista-global-container > div > div > div:nth-child(" + option + ")"));
               

@@ -40,7 +40,13 @@ namespace InstaAndHygiene
        [FindsBy(How = How.CssSelector, Using = "#avista-global-container > div > div.bottom-panel > div.button-back.box > span > span")]
        public IWebElement BackButton { get; set; }
 
-        
+       [FindsBy(How=How.CssSelector,Using="#avista-global-container > div > div.setting-button > span > span")]
+       public IWebElement MainSetting { get; set; }
 
+       [FindsBy(How=How.CssSelector,Using="#avista-global-container > div > div > div.params > div:nth-child(1) > div:nth-child(2) > input")]
+       public IWebElement ClearServerLink { get; set; }        
+
+       [FindsBy(How=How.CssSelector,Using="#avista-global-container > div > div > div.bottom-panel > div.button-back.box")]
+       public IWebElement SettingsBackButton { get; set; }
     }
 }
